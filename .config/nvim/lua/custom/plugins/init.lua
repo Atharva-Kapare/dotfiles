@@ -3,4 +3,24 @@
 --
 -- See the kickstart.nvim README for more information
 
-return { 'akinsho/toggleterm.nvim', version = "*", config = true }
+vim.o.relativenumber = true
+
+return {
+	{
+		'numToStr/Comment.nvim',
+		opts = {
+			-- add any options here
+		},
+		lazy = false,
+	},
+	{
+		'akinsho/toggleterm.nvim',
+		version = "*",
+		opts = {
+			direction = "float",
+			open_mapping = [[<c-t>]]
+		},
+		config = true
+	}
+
+}
