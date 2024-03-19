@@ -4,9 +4,11 @@
 -- See the kickstart.nvim README for more information
 
 vim.o.relativenumber = true
+-- vim.cmd [[colorscheme tokyonight-night]]
 
 return {
 	{
+		-- gcc to comment line, might be worth going and changing the mappings later
 		'numToStr/Comment.nvim',
 		opts = {
 			-- add any options here
@@ -21,6 +23,15 @@ return {
 			open_mapping = [[<c-t>]]
 		},
 		config = true
-	}
+	},
+	{
+		-- For some colours
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd [[colorscheme tokyonight-night]]
+		end,
+	},
 
 }
