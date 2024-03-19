@@ -8,14 +8,6 @@ vim.o.relativenumber = true
 
 return {
 	{
-		-- gcc to comment line, might be worth going and changing the mappings later
-		'numToStr/Comment.nvim',
-		opts = {
-			-- add any options here
-		},
-		lazy = false,
-	},
-	{
 		'akinsho/toggleterm.nvim',
 		version = "*",
 		opts = {
@@ -28,10 +20,9 @@ return {
 		-- For some colours
 		"folke/tokyonight.nvim",
 		lazy = false,
-		priority = 1000,
+		priority = 999,
 		config = function()
 			vim.cmd [[colorscheme tokyonight-night]]
 		end,
 	},
-
 }
