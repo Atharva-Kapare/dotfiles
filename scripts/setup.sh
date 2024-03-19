@@ -14,4 +14,5 @@ sudo apt autoremove -y
 source ~/.bashrc
 
 # Fun hello
-figlet "... and we're back!" | lolcat
+# figlet "... and we're back!" | lolcat
+figlet -t -f mono9 "Done!" | lolcat
