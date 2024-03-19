@@ -16,6 +16,11 @@ aptInstall git
 aptInstall awscli
 aptInstall htop
 
+aptInstall make
+aptInstall unzip
+aptInstall gcc
+aptInstall ripgrep
+
 # Fun ones apparently
 aptInstall figlet
 aptInstall lolcat
