@@ -29,10 +29,14 @@
 
   programs.starship.enable = true;
 
+  # Git config
   programs.git = {
     enable = true;
     userName = "Atharva-Kapare";
     userEmail = "atharva.s.kapare@gmail.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 
   # This value determines the Home Manager release that your
