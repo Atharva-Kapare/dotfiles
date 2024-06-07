@@ -29,7 +29,11 @@
 
   programs.starship.enable = true;
 
-
+  programs.git = {
+    enable = true;
+    userName = "Atharva-Kapare";
+    userEmail = "atharva.s.kapare@gmail.com";
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
