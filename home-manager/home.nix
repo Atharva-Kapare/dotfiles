@@ -20,14 +20,27 @@
     neovim
     thefuck
     starship
+    vscode-with-extensions
 
     alacritty
+    cinnamon.nemo-with-extensions
 
     spotify
+    signal-desktop
+    bitwarden-desktop
 
   ];
 
-  programs.starship.enable = true;
+  # Alacritty config
+  programs.alacritty = {
+    enable = true;
+
+  };
+
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 
   # Git config
   programs.git = {
