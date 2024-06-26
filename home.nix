@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   nixpkgs = {
@@ -10,9 +10,11 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
+#  home.username = userSettings.username;
+#  home.homeDirectory = "/home/"+userSettings.username;
+
   home.username = "ak";
   home.homeDirectory = "/home/ak";
-
 
   home.packages = with pkgs; [
     btop
@@ -28,13 +30,13 @@
     spotify
     signal-desktop
     bitwarden-desktop
+    brave
 
   ];
 
   # Alacritty config
   programs.alacritty = {
     enable = true;
-
   };
 
   programs.starship = {
