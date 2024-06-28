@@ -4,7 +4,7 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs :
     let
 
-systemSettings = {
+      systemSettings = {
         system = "x86_64-linux"; # system arch
         hostname = "white-dwarf"; # hostname
       };
@@ -12,21 +12,26 @@ systemSettings = {
       userSettings = rec {
         username = "ak";
         email = "atharva.s.kapare@gmail.com"; #Used by some configurations, like git
-        
       };
+
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+
     in {
+
+        imports = [
+          ./profiles/personal # (2)
+        ];
       
-      homeConfigurations = { 
-	ak = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          #estraspecialArgs = {
-          #  inherit userSettings;
-          #};
-          modules = [ ./home.nix ];
-        };
-      };
+      # homeConfigurations = { 
+	    #   ak = home-manager.lib.homeManagerConfiguration {
+      #     inherit pkgs;
+      #     extraSpecialArgs = {
+      #       inherit userSettings;
+      #     };
+      #     modules = [ ./home.nix ];
+      #   };
+      # };
 
       nixosConfigurations = {
         white-dwarf = nixpkgs.lib.nixosSystem {
@@ -42,7 +47,8 @@ systemSettings = {
             inherit inputs;
           };
         };
-      }; 
+      };
+
     };
 
   inputs = {

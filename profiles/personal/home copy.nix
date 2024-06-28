@@ -22,7 +22,6 @@
     neovim
     thefuck
     starship
-    vscode-with-extensions
 
     alacritty
     cinnamon.nemo-with-extensions
@@ -33,6 +32,7 @@
     brave
 
     vscode-fhs
+    # vscode-with-extensions
     # vscode-extensions.bbenoist.nix
 
   ];
