@@ -13,9 +13,6 @@
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
 
-  # home.username = "ak";
-  # home.homeDirectory = "/home/ak";
-
   home.packages = with pkgs; [
     btop
     git
@@ -32,8 +29,6 @@
     brave
 
     vscode-fhs
-    # vscode-with-extensions
-    # vscode-extensions.bbenoist.nix
 
   ];
 

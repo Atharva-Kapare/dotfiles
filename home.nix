@@ -13,16 +13,12 @@
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
 
-  # home.username = "ak";
-  # home.homeDirectory = "/home/ak";
-
   home.packages = with pkgs; [
     btop
     git
     neovim
     thefuck
     starship
-    vscode-with-extensions
 
     alacritty
     cinnamon.nemo-with-extensions
@@ -33,7 +29,6 @@
     brave
 
     vscode-fhs
-    # vscode-extensions.bbenoist.nix
 
   ];
 

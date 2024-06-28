@@ -19,19 +19,19 @@
 
     in {
 
-        imports = [
-          ./profiles/personal # (2)
-        ];
+      imports = [
+        ./profiles/personal # (2)
+      ];
       
-      # homeConfigurations = { 
-	    #   ak = home-manager.lib.homeManagerConfiguration {
-      #     inherit pkgs;
-      #     extraSpecialArgs = {
-      #       inherit userSettings;
-      #     };
-      #     modules = [ ./home.nix ];
-      #   };
-      # };
+      homeConfigurations = { 
+	      ak = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit userSettings;
+          };
+          modules = [ ./home.nix ];
+        };
+      };
 
       nixosConfigurations = {
         white-dwarf = nixpkgs.lib.nixosSystem {
