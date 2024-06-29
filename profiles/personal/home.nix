@@ -1,6 +1,10 @@
-{ config, pkgs, userSettings, nixvim, ... }:
-
 {
+  config,
+  pkgs,
+  userSettings,
+  nixvim,
+  ...
+}: {
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
@@ -17,14 +21,14 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
+      allowUnfreePredicate = _: true;
     };
   };
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = userSettings.username;
-  home.homeDirectory = "/home/"+userSettings.username;
+  home.homeDirectory = "/home/" + userSettings.username;
 
   home.packages = with pkgs; [
     btop
@@ -32,6 +36,8 @@
     # neovim
     thefuck
     starship
+
+    (nerdfonts.override {fonts = ["Hack"];})
 
     alacritty
     cinnamon.nemo-with-extensions
@@ -42,14 +48,13 @@
     brave
 
     vscode-fhs
-
   ];
 
   # Alacritty config
   # programs.alacritty = {
   #   enable = true;
   # };
-  
+
   # programs.bash.enable = true;
 
   programs.starship = {
@@ -81,5 +86,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
 }
