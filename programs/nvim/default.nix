@@ -17,6 +17,7 @@
     ./plugins/lsp.nix
     ./plugins/git.nix
     ./plugins/autopairs.nix
+    ./plugins/indent-blankline.nix
   ];
 
   programs.nixvim = {
