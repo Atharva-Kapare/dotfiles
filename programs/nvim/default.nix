@@ -1,7 +1,9 @@
 { config, pkgs, inputs, ...}: {
     # Configuration stuff ...
     imports = [
-        inputs.nixvim.homeManagerModules.nixvim
+        inputs.nixvim.homeManagerModules.nixvim # DO NOT REMOVE
+
+	./plugings/hardtime.nix
     ];
     
     programs.nixvim = {

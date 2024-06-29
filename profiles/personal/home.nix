@@ -11,6 +11,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ../../programs/nvim
+    ../../programs/terminal
   ];
 
   nixpkgs = {
@@ -45,9 +46,11 @@
   ];
 
   # Alacritty config
-  programs.alacritty = {
-    enable = true;
-  };
+  # programs.alacritty = {
+  #   enable = true;
+  # };
+  
+  # programs.bash.enable = true;
 
   programs.starship = {
     enable = true;
