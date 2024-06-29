@@ -5,6 +5,7 @@ let
 	gs = "git status";
 	ga = "git add -p";
 	gc = "git commit -m";
+	la = "ls -la";
     };
 in
 {
