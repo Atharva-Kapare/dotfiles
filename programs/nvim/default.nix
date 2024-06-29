@@ -15,6 +15,7 @@
     ./plugins/toggleterm.nix
     ./plugins/treesitter.nix
     ./plugins/lsp.nix
+    ./plugins/git.nix
   ];
 
   programs.nixvim = {
