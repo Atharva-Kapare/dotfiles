@@ -8,6 +8,7 @@
 	./plugins/lualine.nix
 	./plugins/telescope.nix
 	./plugins/toggleterm.nix
+	./plugins/treesitter.nix
 	
     ];
     
