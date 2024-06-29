@@ -7,6 +7,8 @@
 	./plugins/which-key.nix
 	./plugins/lualine.nix
 	./plugins/telescope.nix
+	./plugins/toggleterm.nix
+	
     ];
     
     programs.nixvim = {
