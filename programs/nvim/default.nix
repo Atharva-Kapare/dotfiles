@@ -6,6 +6,7 @@
 	# ./plugins/hardtime.nix
 	./plugins/which-key.nix
 	./plugins/lualine.nix
+	./plugins/telescope.nix
     ];
     
     programs.nixvim = {

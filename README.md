@@ -14,3 +14,7 @@ I wouldn't recommend copying these, still a major wip
 - [x] Figure out bash aliases
 - [x] Actually configure starship
 - [] Tmux
+- [] Tmux-Navigator
+- [] Treesitter
+- [] ToggleTerm
+- [x] Telescope
