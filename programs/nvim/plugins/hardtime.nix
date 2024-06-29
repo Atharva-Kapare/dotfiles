@@ -1,10 +1,14 @@
-{ config, pkgs, inputs, ...}: {
-    # Configuration stuff ...
-    imports = [
-    ];
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  # Configuration stuff ...
+  imports = [
+  ];
 
-    programs.nixvim.plugins.hardtime = {
-	enable = true;
-    };
-
+  programs.nixvim.plugins.hardtime = {
+    enable = true;
+  };
 }

@@ -6,6 +6,7 @@
 }: {
   # Configuration stuff ...
   imports = [
+    ./cmp.nix
   ];
 
   programs.nixvim.plugins = {
