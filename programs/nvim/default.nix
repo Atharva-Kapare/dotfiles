@@ -4,6 +4,7 @@
         inputs.nixvim.homeManagerModules.nixvim # DO NOT REMOVE
 
 	# ./plugins/hardtime.nix
+	./plugins/which-key.nix
     ];
     
     programs.nixvim = {
