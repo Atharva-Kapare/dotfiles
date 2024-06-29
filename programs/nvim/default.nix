@@ -18,6 +18,7 @@
     ./plugins/git.nix
     ./plugins/autopairs.nix
     ./plugins/indent-blankline.nix
+    ./plugins/precognition.nix
   ];
 
   programs.nixvim = {
