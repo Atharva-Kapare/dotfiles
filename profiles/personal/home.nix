@@ -1,6 +1,18 @@
-{ config, pkgs, userSettings, ... }:
+{ config, pkgs, userSettings, nixvim, ... }:
 
 {
+  imports = [
+    # If you want to use modules your own flake exports (from modules/home-manager):
+    # outputs.homeManagerModules.example
+
+    # Or modules exported from other flakes (such as nix-colors):
+    # inputs.nix-colors.homeManagerModules.default
+
+    # You can also split up your configuration and import pieces of it here:
+    # ./nvim.nix
+    ../../programs/nvim
+  ];
+
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -16,7 +28,7 @@
   home.packages = with pkgs; [
     btop
     git
-    neovim
+    # neovim
     thefuck
     starship
 
@@ -51,6 +63,8 @@
       init.defaultBranch = "main";
     };
   };
+
+  programs.ssh.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
