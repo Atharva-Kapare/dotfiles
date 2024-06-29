@@ -10,7 +10,6 @@
             direction = "float";
             closeOnExit = false;
         };
-
     };
 
     programs.nixvim.keymaps = [
@@ -36,5 +35,4 @@
                 "<leader>t" = "Toggle terminal";
     	};
     };
-
 }
