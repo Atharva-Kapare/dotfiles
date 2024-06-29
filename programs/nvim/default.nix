@@ -3,7 +3,7 @@
     imports = [
         inputs.nixvim.homeManagerModules.nixvim # DO NOT REMOVE
 
-	./plugings/hardtime.nix
+	./plugins/hardtime.nix
     ];
     
     programs.nixvim = {
