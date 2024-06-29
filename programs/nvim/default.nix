@@ -8,7 +8,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim # DO NOT REMOVE
 
-    # ./plugins/hardtime.nix
+    ./plugins/hardtime.nix
     ./plugins/which-key.nix
     ./plugins/lualine.nix
     ./plugins/telescope.nix
