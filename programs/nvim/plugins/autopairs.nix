@@ -8,7 +8,7 @@
   imports = [
   ];
 
-  programs.nixvim.plugins.autopairs = {
+  programs.nixvim.plugins.nvim-autopairs = {
     enable = true;
   };
 }
