@@ -9,7 +9,8 @@
 	./plugins/telescope.nix
 	./plugins/toggleterm.nix
 	./plugins/treesitter.nix
-	
+	./plugins/lsp.nix
+
     ];
     
     programs.nixvim = {
