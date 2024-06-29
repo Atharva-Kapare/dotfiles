@@ -16,6 +16,7 @@
     ./plugins/treesitter.nix
     ./plugins/lsp.nix
     ./plugins/git.nix
+    ./plugins/autopairs.nix
   ];
 
   programs.nixvim = {
