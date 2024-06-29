@@ -1,10 +1,14 @@
-{ config, pkgs, inputs, ...}: {
-    # Configuration stuff ...
-    imports = [
-    ];
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  # Configuration stuff ...
+  imports = [
+  ];
 
-    programs.nixvim.plugins.lualine = {
-	enable = true;
-    };
-
+  programs.nixvim.plugins.lualine = {
+    enable = true;
+  };
 }
