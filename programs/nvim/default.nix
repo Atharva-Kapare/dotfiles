@@ -5,6 +5,7 @@
 
 	# ./plugins/hardtime.nix
 	./plugins/which-key.nix
+	./plugins/lualine.nix
     ];
     
     programs.nixvim = {
@@ -12,6 +13,8 @@
         vimAlias = true;
 	viAlias = true;
 	defaultEditor = true;
+
+	globals.mapleader = " ";
 
         # Configure neovim options...
         opts = {
