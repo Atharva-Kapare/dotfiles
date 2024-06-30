@@ -16,7 +16,6 @@
     # ./nvim.nix
     ../../programs/nvim
     ../../programs/terminal
-    ../../programs/tmux
   ];
 
   nixpkgs = {
