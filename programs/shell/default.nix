@@ -12,6 +12,7 @@
     la = "ls -la";
     t = "tmux";
     lg = "lazygit";
+    cat = "bat";
   };
 in {
   # Configuration stuff ...
@@ -21,6 +22,7 @@ in {
 
   home.packages = [
     pkgs.tmux
+    pkgs.bat
   ];
 
   programs.tmux.enable = true;
