@@ -11,6 +11,7 @@
     gc = "git commit -m";
     la = "ls -la";
     t = "tmux";
+    lg = "lazygit";
   };
 in {
   # Configuration stuff ...

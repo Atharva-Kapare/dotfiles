@@ -36,6 +36,7 @@
     # neovim
     thefuck
     starship
+    lazygit
 
     (nerdfonts.override {fonts = ["Hack"];})
 
@@ -43,6 +44,7 @@
     cinnamon.nemo-with-extensions
 
     libreoffice-fresh
+
     spotify
     signal-desktop
     bitwarden-desktop
