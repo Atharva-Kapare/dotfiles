@@ -17,6 +17,7 @@
     ../../programs/nvim
     ../../programs/terminal
     ../../programs/devbox
+    ../../programs/zoxide
   ];
 
   nixpkgs = {
