@@ -16,6 +16,7 @@
     # ./nvim.nix
     ../../programs/nvim
     ../../programs/terminal
+    ../../programs/devbox
   ];
 
   nixpkgs = {
