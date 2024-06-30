@@ -42,6 +42,7 @@
     alacritty
     cinnamon.nemo-with-extensions
 
+    libreoffice-fresh
     spotify
     signal-desktop
     bitwarden-desktop
