@@ -15,8 +15,9 @@ I wouldn't recommend copying these, still a major wip
 - [x] Add hardtime and precognition plugins into neovim
 - [x] Figure out bash aliases
 - [x] Actually configure starship
-- [] Tmux
+- [x] Tmux
 - [] Tmux-Navigator
 - [x] Treesitter
 - [x] ToggleTerm
 - [x] Telescope
+- [] Harpoon nvim
