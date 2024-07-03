@@ -20,6 +20,7 @@
     ./plugins/indent-blankline.nix
     ./plugins/precognition.nix
     ./plugins/no-neck-pain.nix
+    ./plugins/coq-nvim.nix
   ];
 
   programs.nixvim = {
