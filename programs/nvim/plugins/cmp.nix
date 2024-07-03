@@ -38,6 +38,14 @@
             name = "luasnip"; # snippets
             keywordLength = 3;
           }
+          {
+            name = "cmdline"; # snippets
+            keywordLength = 3;
+          }
+          {
+            name = "treesitter";
+            keywordLength = 3;
+          }
         ];
 
         window = {
@@ -62,7 +70,8 @@
     cmp-buffer = {enable = true;};
     cmp-path = {enable = true;}; # file system paths
     cmp_luasnip = {enable = true;}; # snippets
-    cmp-cmdline = {enable = false;}; # autocomplete for cmdline
+    cmp-cmdline = {enable = true;}; # autocomplete for cmdline
+    cmp-treesitter = {enable = true;};
   };
   # extraConfigLua = ''
   #         luasnip = require("luasnip")
