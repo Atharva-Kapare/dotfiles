@@ -28,6 +28,12 @@
     viAlias = true;
     defaultEditor = true;
 
+    colorschemes = {
+      cyberdream = {
+        enable = true;
+      };
+    };
+
     globals.mapleader = " ";
 
     keymaps = [
