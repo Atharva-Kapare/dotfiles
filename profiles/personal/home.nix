@@ -51,6 +51,7 @@
     signal-desktop
     bitwarden-desktop
     brave
+    discord
 
     vscode-fhs
   ];
