@@ -19,6 +19,7 @@
     ./plugins/autopairs.nix
     ./plugins/indent-blankline.nix
     ./plugins/precognition.nix
+    ./plugins/no-neck-pain.nix
   ];
 
   programs.nixvim = {
