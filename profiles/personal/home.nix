@@ -33,7 +33,8 @@
   home.homeDirectory = "/home/" + userSettings.username;
 
   home.packages = with pkgs; [
-    btop
+    # btop
+    bottom
     git
     # neovim
     thefuck
