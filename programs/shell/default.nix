@@ -13,6 +13,7 @@
     t = "tmux";
     lg = "lazygit";
     cat = "bat";
+    mux = "tmuxinator";
   };
 
   tmux-tokyo-night =
@@ -38,10 +39,12 @@ in {
   home.packages = [
     pkgs.tmux
     pkgs.bat
+    pkgs.tmuxinator
   ];
 
   programs.tmux = {
     enable = true;
+    tmuxinator.enable = true;
     prefix = "C-a";
     keyMode = "vi";
     plugins = [
