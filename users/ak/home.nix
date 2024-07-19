@@ -51,6 +51,7 @@
     spotify
     signal-desktop
     bitwarden-desktop
+    firefox
     brave
     discord
 
