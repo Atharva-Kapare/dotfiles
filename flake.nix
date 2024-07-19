@@ -21,39 +21,46 @@
 
     system = "x86_64-linux";
     # pkgs = nixpkgs.legacyPackages.${system};
-    pkgs = import nixpkgs { system = system; config.allowUnfree = true; };
+    pkgs = import nixpkgs {
+      system = system;
+      config.allowUnfree = true;
+    };
   in {
     # imports = [
     #   ./profiles/personal # (2)
     # ];
 
-    homeConfigurations = nixpkgs.lib.genAttrs [ "ak" ] 
-    (username: home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {
-          inherit userSettings;
-          inherit inputs;
-        };
-        modules = [
-          ./users/${username}/home.nix
-          ];
-      });
-
-    nixosConfigurations = nixpkgs.lib.genAttrs [ "white-dwarf" "red-giant"] 
-    (hostName: nixpkgs.lib.nixosSystem {
-        system = systemSettings.system;
-        modules = [
-          { networking.hostName = hostName; }
-          ./device/${hostName}/configuration.nix
-          ];
-        specialArgs = {
-          # pass config variables from above
+    homeConfigurations =
+      nixpkgs.lib.genAttrs ["ak"]
+      (username:
+        home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          inherit systemSettings;
-          inherit userSettings;
-          inherit inputs;
-        };
-      });
+          extraSpecialArgs = {
+            inherit userSettings;
+            inherit inputs;
+          };
+          modules = [
+            ./users/${username}/home.nix
+          ];
+        });
+
+    nixosConfigurations =
+      nixpkgs.lib.genAttrs ["white-dwarf" "red-giant" "pandora"]
+      (hostName:
+        nixpkgs.lib.nixosSystem {
+          system = systemSettings.system;
+          modules = [
+            {networking.hostName = hostName;}
+            ./device/${hostName}/configuration.nix
+          ];
+          specialArgs = {
+            # pass config variables from above
+            inherit pkgs;
+            inherit systemSettings;
+            inherit userSettings;
+            inherit inputs;
+          };
+        });
   };
 
   inputs = {
