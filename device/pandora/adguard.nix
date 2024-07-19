@@ -20,7 +20,7 @@ in {
       enable = true;
       openFirewall = true;
       allowDHCP = true;
-      port = adguardPort;
+      port = 3000;
 
       settings = {
         # https://github.com/NixOS/nixpkgs/issues/246461
