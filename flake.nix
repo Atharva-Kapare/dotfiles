@@ -11,6 +11,7 @@
       system = "x86_64-linux"; # system arch
       hostname = "white-dwarf"; # hostname
       profile = "personal";
+      device = "desktop";
     };
 
     userSettings = rec {
@@ -19,27 +20,32 @@
     };
 
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    # pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs { system = system; config.allowUnfree = true; };
   in {
     # imports = [
     #   ./profiles/personal # (2)
     # ];
 
-    homeConfigurations = {
-      ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations = nixpkgs.lib.genAttrs [ "ak" ] 
+    (username: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
           inherit userSettings;
           inherit inputs;
         };
-        modules = [./profiles/${systemSettings.profile}/home.nix];
-      };
-    };
+        modules = [
+          ./users/${username}/home.nix
+          ];
+      });
 
-    nixosConfigurations = {
-      ${systemSettings.hostname} = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = nixpkgs.lib.genAttrs [ "white-dwarf" "red-giant"] 
+    (hostName: nixpkgs.lib.nixosSystem {
         system = systemSettings.system;
-        modules = [./profiles/${systemSettings.profile}/configuration.nix];
+        modules = [
+          { networking.hostName = hostName; }
+          ./device/${hostName}/configuration.nix
+          ];
         specialArgs = {
           # pass config variables from above
           inherit pkgs;
@@ -47,8 +53,7 @@
           inherit userSettings;
           inherit inputs;
         };
-      };
-    };
+      });
   };
 
   inputs = {
