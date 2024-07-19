@@ -5,13 +5,14 @@ let
   adguardPort = 3000;
 in {
 
-  environment.systemPackages = with pkgs; [
-    adguardhome # adguardhome
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   adguardhome # adguardhome
+  # ];
 
   networking = {
     firewall = {
       allowedTCPPorts = [ adguardPort ];
+      allowedUDPPorts = [ 53 ];
     };
   };
 
@@ -20,7 +21,7 @@ in {
       enable = true;
       openFirewall = true;
       allowDHCP = true;
-      port = 3000;
+      port = adguardPort;
 
       settings = {
         # https://github.com/NixOS/nixpkgs/issues/246461
