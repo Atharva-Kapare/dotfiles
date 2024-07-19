@@ -24,7 +24,7 @@
       src = pkgs.fetchFromGitHub {
         owner = "fabioluciano";
         repo = "tmux-tokyo-night";
-        rev = "1.5.2";
+        rev = "v1.5.2";
         # sha256 = "sha256-OCUuNubXKk91+tqVGRKrFx1abhLOiog7hyas7CrI4Fk=";
         sha256 = "sha256-G5SV19811i0GBkXUDiQ5xerfkTxeQ9jdhM7k22XiQCg=";
       };
