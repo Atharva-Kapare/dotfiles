@@ -34,9 +34,9 @@ in {
     services.adguardhome = {
     enable = true;
     host = "0.0.0.0";
-    port = 3000;
+    port = 8080;
     allowDHCP = true;
     openFirewall = true;
   };
-  networking.firewall.allowedTCPPorts = [ 53 3000 3001 ];
+  networking.firewall.allowedTCPPorts = [ 53 8080 3001 ];
 }
