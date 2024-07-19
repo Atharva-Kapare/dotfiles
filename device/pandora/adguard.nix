@@ -9,6 +9,12 @@ in {
     adguardhome # adguardhome
   ];
 
+  networking = {
+    firewall = {
+      allowedTCPPorts = [ adguardPort ];
+    };
+  };
+
   services = {
     adguardhome = {
       enable = true;
