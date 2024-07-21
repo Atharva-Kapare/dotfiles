@@ -1,6 +1,4 @@
 { pkgs, ... }:
-
-with lib;
 let
   adguardPort = 3000;
 in {
