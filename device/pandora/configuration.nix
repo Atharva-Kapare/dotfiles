@@ -15,7 +15,7 @@
     ../common.nix
     
     ./cockpit.nix
-    ./adguard
+    ./adguard.nix
 
   ];
 
