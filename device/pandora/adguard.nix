@@ -27,7 +27,7 @@ in {
         users = {
           name = "ak";
           password = "$2y$10$lD/VNPDBWKcdQpD0GIP53OREp/OkxvNt1akuGPuYxoK824Ofz3vwS";
-        }
+        };
       };
 
     };
