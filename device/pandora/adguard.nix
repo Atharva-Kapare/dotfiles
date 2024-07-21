@@ -21,14 +21,12 @@ in {
       # allowDHCP = true;
       port = adguardPort;
 
-      # settings = {
-      #   # https://github.com/NixOS/nixpkgs/issues/246461
-      #   # schema_version = 20;
-      #   users = {
-      #     name = "ak";
-      #     password = "$2y$10$lD/VNPDBWKcdQpD0GIP53OREp/OkxvNt1akuGPuYxoK824Ofz3vwS";
-      #   };
-      # };
+      settings = {
+        # https://github.com/NixOS/nixpkgs/issues/246461
+        schema_version = 20;
+        bind_port = 3000;
+        http.address = "0.0.0.0:3000";
+      };
 
     };
   };
