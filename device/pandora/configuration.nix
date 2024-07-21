@@ -48,7 +48,7 @@
     recommendedTlsSettings = true;
   };
 
-  security.acme.defaults.email = userSettings.email;
-  security.acme.acceptTerms = true;
+  # security.acme.defaults.email = userSettings.email;
+  # security.acme.acceptTerms = true;
   
 }
