@@ -15,7 +15,7 @@ in {
         filtering = {
           rewrites = [
             {
-              domain = "home.io";
+              domain = "*.home.io";
               answer = "10.11.12.101";
             }
           ];
