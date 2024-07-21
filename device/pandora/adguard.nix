@@ -66,10 +66,11 @@ in {
       # "6060:6060/tcp" # Debugging
     ];
     volumes = [
-      "adguard_config:/opt/adguardhome/conf"
-      "adguard_work:/opt/adguardhome/work"
+      "/volumes/adguard_workdir:/opt/adguardhome/work"
+      "/volumes/adguard_confdir:/opt/adguardhome/conf"
     ];
   };
 
   networking.firewall.allowedTCPPorts = [ 80 53 443 3000 ];
+  networking.firewall.allowedUDPPorts = [ 80 53 443 ];
 }
