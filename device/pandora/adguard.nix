@@ -24,6 +24,10 @@ in {
       settings = {
         # https://github.com/NixOS/nixpkgs/issues/246461
         schema_version = 20;
+        users = {
+          name = "ak";
+          password = "$2y$10$lD/VNPDBWKcdQpD0GIP53OREp/OkxvNt1akuGPuYxoK824Ofz3vwS";
+        }
       };
 
     };
