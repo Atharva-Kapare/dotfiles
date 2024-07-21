@@ -71,5 +71,5 @@ in {
   #   ];
   # };
 
-  networking.firewall.allowedTCPPorts = [ 53 3001 ];
+  networking.firewall.allowedTCPPorts = [ 53 3000 ];
 }
