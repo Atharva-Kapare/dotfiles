@@ -16,7 +16,7 @@ in {
 
   services = {
     adguardhome = {
-      enable = true;
+      enable = false;
       openFirewall = true;
       allowDHCP = true;
       port = adguardPort;
