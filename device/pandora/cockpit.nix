@@ -20,10 +20,10 @@
       };
     };
 
-    nginx.virtualHosts."cockpit.home" = {
+    nginx.virtualHosts."my.home" = {
       # addSSL = true;
       # enableACME = true;
-      locations."/" = {
+      locations."/cockpit" = {
         proxyPass = "http://127.0.0.1:9090";
         proxyWebsockets = true;
       };
