@@ -21,17 +21,17 @@ in {
       # allowDHCP = true;
       port = adguardPort;
 
-      settings = {
-        # https://github.com/NixOS/nixpkgs/issues/246461
-        filtering = {
-          rewrites = [
-            {
-              domain = "ad.home";
-              answer = "10.11.12.101:3000";
-            }
-          ];
-        };
-      };
+      # settings = {
+      #   # https://github.com/NixOS/nixpkgs/issues/246461
+      #   filtering = {
+      #     rewrites = [
+      #       {
+      #         domain = "ad.home";
+      #         answer = "10.11.12.101:3000";
+      #       }
+      #     ];
+      #   };
+      # };
 
     };
   };
