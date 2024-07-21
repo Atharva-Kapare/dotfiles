@@ -4,7 +4,7 @@ let
 in {
 
   environment.systemPackages = with pkgs; [
-    adguardhome # adguardhome
+    # adguardhome # adguardhome
   ];
 
   networking = {
