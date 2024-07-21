@@ -3,17 +3,6 @@ let
   adguardPort = 3000;
 in {
 
-  environment.systemPackages = with pkgs; [
-    # adguardhome # adguardhome
-  ];
-
-  # networking = {
-  #   firewall = {
-  #     allowedTCPPorts = [ adguardPort ];
-  #     allowedUDPPorts = [ 53 ];
-  #   };
-  # };
-
   services = {
     adguardhome = {
       enable = true;
@@ -34,20 +23,17 @@ in {
       # };
 
     };
+
+    nginx.virtualHosts."adguard.home" = {
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://$1:port/your/location";
+        proxyWebsockets = true;
+      };
+    };
   };
 
-  # services.adguardhome = {
-  #   enable = true;
-  #   host = "0.0.0.0";
-  #   port = adguardPort;
-  #   allowDHCP = true;
-  #   openFirewall = true;
-  # };
-
-  # virtualisation.oci-containers.containers.adguard = {
-  #   hostname = "adguard";
-  #   autoStart = true;
-  #   image = "adguard/adguardhome";
   #   ports = [
   #     # DNS server
   #     "53:53/tcp"
@@ -72,11 +58,6 @@ in {
 
   #     # "6060:6060/tcp" # Debugging
   #   ];
-  #   volumes = [
-  #     "/volumes/adguard_workdir:/opt/adguardhome/work"
-  #     "/volumes/adguard_confdir:/opt/adguardhome/conf"
-  #   ];
-  # };
 
   networking.firewall.allowedTCPPorts = [ 80 53 443 3000 ];
   networking.firewall.allowedUDPPorts = [ 80 53 443 ];
