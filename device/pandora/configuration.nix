@@ -13,9 +13,9 @@
     # ./hardware-configuration.nix
     /etc/nixos/hardware-configuration.nix
     ../common.nix
-
     
     ./cockpit.nix
+    ./adguard
 
   ];
 
