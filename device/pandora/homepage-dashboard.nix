@@ -35,7 +35,7 @@
           Developer = [
             {
               Github = [
-                {""
+                {
                   abbr = "GH";
                   href = "https://github.com/";
                 }
