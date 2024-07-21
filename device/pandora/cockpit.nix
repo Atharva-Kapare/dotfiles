@@ -8,13 +8,15 @@
      cockpit # cockpit
   ];
 
-  services.cockpit = {
-    enable = true;
-    port = 9090;
-    openFirewall = true;
-    settings = {
-      WebService = {
-        AllowUnencrypted = true;
+  services = {
+    cockpit = {
+      enable = true;
+      port = 9090;
+      openFirewall = true;
+      settings = {
+        WebService = {
+          AllowUnencrypted = true;
+        };
       };
     };
 
