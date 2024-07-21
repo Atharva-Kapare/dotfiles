@@ -25,6 +25,8 @@ in {
     };
 
     nginx.virtualHosts."adguard.home" = {
+      addSSL = true;
+      enableACME = true;
       locations."/" = {
         proxyPass = "http://$1:port/your/location";
         proxyWebsockets = true;
