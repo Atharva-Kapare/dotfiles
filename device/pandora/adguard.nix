@@ -24,10 +24,10 @@ in {
 
     };
 
-    nginx.virtualHosts."my.home.io" = {
+    nginx.virtualHosts."adguard.home.io" = {
       # addSSL = true;
       # enableACME = true;
-      locations."/adguard" = {
+      locations."/" = {
         proxyPass = "http://127.0.0.1:3000";
         proxyWebsockets = true;
       };
