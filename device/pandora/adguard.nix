@@ -40,6 +40,7 @@ in {
   # };
 
   virtualisation.oci-containers.containers.adguard = {
+    hostname = "adguard";
     autoStart = true;
     image = "adguard/adguardhome";
     ports = [
