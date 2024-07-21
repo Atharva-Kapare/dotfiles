@@ -46,6 +46,8 @@
     recommendedOptimisation = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
+    security.acme.defaults.email = userSettings.email;
+    security.acme.acceptTerms = true;
   };
 
   
