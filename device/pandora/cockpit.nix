@@ -24,7 +24,7 @@
       # addSSL = true;
       # enableACME = true;
       locations."/" = {
-        proxyPass = "http://localhost:9090";
+        proxyPass = "http://localhost:9090/";
         proxyWebsockets = true;
       };
     };

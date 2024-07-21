@@ -21,7 +21,7 @@
       # enableACME = true;
       default = true;
       locations."/" = {
-        proxyPass = "http://localhost:8082";
+        proxyPass = "http://localhost:8082/";
         proxyWebsockets = true;
       };
     };
