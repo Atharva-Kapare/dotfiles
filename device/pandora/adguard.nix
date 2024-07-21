@@ -7,28 +7,28 @@ in {
     # adguardhome # adguardhome
   ];
 
-  networking = {
-    firewall = {
-      allowedTCPPorts = [ adguardPort ];
-      allowedUDPPorts = [ 53 ];
-    };
-  };
+  # networking = {
+  #   firewall = {
+  #     allowedTCPPorts = [ adguardPort ];
+  #     allowedUDPPorts = [ 53 ];
+  #   };
+  # };
 
   services = {
     adguardhome = {
       enable = true;
       openFirewall = true;
-      allowDHCP = true;
+      # allowDHCP = true;
       port = adguardPort;
 
-      settings = {
-        # https://github.com/NixOS/nixpkgs/issues/246461
-        # schema_version = 20;
-        users = {
-          name = "ak";
-          password = "$2y$10$lD/VNPDBWKcdQpD0GIP53OREp/OkxvNt1akuGPuYxoK824Ofz3vwS";
-        };
-      };
+      # settings = {
+      #   # https://github.com/NixOS/nixpkgs/issues/246461
+      #   # schema_version = 20;
+      #   users = {
+      #     name = "ak";
+      #     password = "$2y$10$lD/VNPDBWKcdQpD0GIP53OREp/OkxvNt1akuGPuYxoK824Ofz3vwS";
+      #   };
+      # };
 
     };
   };
@@ -75,6 +75,6 @@ in {
   #   ];
   # };
 
-  # networking.firewall.allowedTCPPorts = [ 80 53 443 3000 ];
-  # networking.firewall.allowedUDPPorts = [ 80 53 443 ];
+  networking.firewall.allowedTCPPorts = [ 80 53 443 3000 ];
+  networking.firewall.allowedUDPPorts = [ 80 53 443 ];
 }
