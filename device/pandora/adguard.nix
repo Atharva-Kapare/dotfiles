@@ -24,7 +24,6 @@ in {
       settings = {
         # https://github.com/NixOS/nixpkgs/issues/246461
         schema_version = 20;
-        bind_port = 3000;
         http.address = "0.0.0.0:3000";
       };
 
