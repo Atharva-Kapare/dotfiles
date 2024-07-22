@@ -13,29 +13,29 @@
       openFirewall = true;
       # configWritable = true;
 
-      config = {
-        # Includes dependencies for a basic setup
-        # https://www.home-assistant.io/integrations/default_config/
-        default_config = {};
-      };
+      # config = {
+      #   # Includes dependencies for a basic setup
+      #   # https://www.home-assistant.io/integrations/default_config/
+      #   default_config = {};
+      # };
 
       
-      # config = {
-      #   homeassistant = {
-      #     name = "Home";
-      #     time_zone = "Australia/Sydney";
-      #     latitude = -33.0;
-      #     longitude = 151.0;
-      #     elevation = 1.0;
-      #     unit_system = "metric";
-      #     temperature_unit = "C";
-      #   };
-      #   # Enable the frontend
-      #   frontend = { };
-      #   mobile_app = { };
+      config = {
+        homeassistant = {
+          name = "Home";
+          time_zone = "Australia/Sydney";
+          latitude = -33.0;
+          longitude = 151.0;
+          elevation = 1.0;
+          unit_system = "metric";
+          temperature_unit = "C";
+        };
+        # Enable the frontend
+        frontend = { };
+        http = {};
 
-      #   "automation ui" = "!include automations.yaml";
-      # };
+        "automation ui" = "!include automations.yaml";
+      };
 
       extraComponents = [
         "default_config"
