@@ -26,6 +26,8 @@
         # Enable the frontend
         frontend = { };
         mobile_app = { };
+
+        "automation ui" = "!include automations.yaml";
       };
 
       extraComponents = [
