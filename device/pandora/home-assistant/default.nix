@@ -11,7 +11,7 @@
     home-assistant = {
       enable = true;
       openFirewall = true;
-      configWriteable = true;
+      configWritable = true;
       
       config = {
         homeassistant = {
