@@ -75,6 +75,16 @@
           ];
         }
         {
+          "Management" = [
+            {
+              "Home Assistant" = {
+                description = "Manage smart home";
+                href = "http://hass.home.io";
+              };
+            }
+          ];
+        }
+        {
           "Media" = [
             {
               "Jellyfin" = {
