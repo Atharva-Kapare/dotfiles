@@ -12,6 +12,13 @@
       enable = true;
       openFirewall = true;
       # configWritable = true;
+
+      config = {
+        # Includes dependencies for a basic setup
+        # https://www.home-assistant.io/integrations/default_config/
+        default_config = {};
+      };
+
       
       # config = {
       #   homeassistant = {
@@ -30,11 +37,11 @@
       #   "automation ui" = "!include automations.yaml";
       # };
 
-      # extraComponents = [
-      #   "default_config"
-      #   "esphome"
-      #   "zha"
-      # ];
+      extraComponents = [
+        "default_config"
+        "esphome"
+        "zha"
+      ];
       
     };
 
