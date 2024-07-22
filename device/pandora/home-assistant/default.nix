@@ -49,6 +49,7 @@
         "radio_browser"
 
         "zha"
+        "solax"
       ];
       
     };
