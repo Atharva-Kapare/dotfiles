@@ -15,9 +15,9 @@
         homeassistant = {
           name = "Home";
           time_zone = "Australia/Sydney";
-          latitude = -33;
-          longitude = 151;
-          elevation = 1;
+          latitude = -33.0;
+          longitude = 151.0;
+          elevation = 1.0;
           unit_system = "metric";
           temperature_unit = "C";
         };
