@@ -40,6 +40,8 @@
       extraComponents = [
         "default_config"
         "esphome"
+        "met"
+        "radio_browser"
         "zha"
       ];
       
