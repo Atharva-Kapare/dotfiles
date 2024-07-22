@@ -17,6 +17,7 @@
     ./cockpit.nix
     ./adguard.nix
     ./homepage-dashboard.nix
+    ./home-assistant
 
   ];
 
