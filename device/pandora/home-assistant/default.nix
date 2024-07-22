@@ -22,17 +22,17 @@
       
       config = {
         default_config = {};
-        # homeassistant = {
-        #   name = "Home";
-        #   time_zone = "Australia/Sydney";
-        #   latitude = -33.0;
-        #   longitude = 151.0;
-        #   elevation = 1.0;
-        #   unit_system = "metric";
-        #   temperature_unit = "C";
-        # };
-        # # Enable the frontend
-        # frontend = { };
+        homeassistant = {
+          name = "Home";
+          time_zone = "Australia/Sydney";
+          latitude = -33.0;
+          longitude = 151.0;
+          elevation = 1.0;
+          unit_system = "metric";
+          temperature_unit = "C";
+        };
+        # Enable the frontend
+        frontend = { };
         http = {
           server_host = "::1";
           trusted_proxies = [ "::1" ];
@@ -47,6 +47,7 @@
         "esphome"
         "met"
         "radio_browser"
+
         "zha"
       ];
       
