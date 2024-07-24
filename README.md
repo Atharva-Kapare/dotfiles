@@ -21,5 +21,5 @@ I wouldn't recommend copying these, still a major wip
 - [x] ToggleTerm
 - [x] Telescope
 - [] Harpoon nvim
-- [] No Neck Pain nvim
-- [] Devbox
+- [x] No Neck Pain nvim
+- [x] Devbox
