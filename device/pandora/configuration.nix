@@ -13,12 +13,11 @@
     # ./hardware-configuration.nix
     /etc/nixos/hardware-configuration.nix
     ../common.nix
-    
+
     ./cockpit.nix
     ./adguard.nix
     ./homepage-dashboard.nix
     ./home-assistant
-
   ];
 
   # Useful other development tools
@@ -29,8 +28,7 @@
     podman-compose # start group of containers for dev
   ];
 
-  virtualisation =
-  {
+  virtualisation = {
     podman = {
       enable = true;
       dockerCompat = true;
@@ -50,7 +48,8 @@
     recommendedTlsSettings = true;
   };
 
+  services.openssh.enable = true;
+
   # security.acme.defaults.email = userSettings.email;
   # security.acme.acceptTerms = true;
-  
 }
