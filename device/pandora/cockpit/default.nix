@@ -9,6 +9,7 @@ in
 
   environment.systemPackages = with pkgs; [
      cockpit # cockpit
+     cockpitPodman
   ];
 
   services = {
