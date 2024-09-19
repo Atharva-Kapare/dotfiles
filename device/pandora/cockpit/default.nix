@@ -2,6 +2,8 @@
   pkgs,
   ...
 }:
+let
+  cockpitPodman = pkgs.callPackage ./cockpitPodman.nix { inherit pkgs; };
 {
 
   environment.systemPackages = with pkgs; [
