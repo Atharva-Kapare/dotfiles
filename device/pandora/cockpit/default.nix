@@ -3,7 +3,7 @@
   ...
 }:
 let
-  cockpitPodman = pkgs.callPackage ./cockpitPodman.nix { inherit pkgs; };
+  cockpitPodman = pkgs.callPackage ./cockpitPodman.nix { };
 in
 {
 
