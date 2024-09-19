@@ -99,6 +99,17 @@
     };
   };
 
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      dockerSocket.enable = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+    oci-containers.backend = "podman";
+    containers.enable = true;
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -106,6 +117,11 @@
     wget
     home-manager
     git
+
+    dive # look into docker image layers
+    podman-tui # status of containers in the terminal
+    # docker-compose # start group of containers for dev
+    podman-compose # start group of containers for dev
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

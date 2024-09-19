@@ -46,6 +46,8 @@
     alacritty
     cinnamon.nemo-with-extensions
 
+    docker
+
     libreoffice-fresh
 
     spotify
