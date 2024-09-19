@@ -14,7 +14,7 @@
     /etc/nixos/hardware-configuration.nix
     ../common.nix
 
-    ./cockpit.nix
+    ./cockpit
     ./adguard.nix
     ./homepage-dashboard.nix
     ./home-assistant
