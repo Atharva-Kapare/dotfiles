@@ -45,7 +45,7 @@
         });
 
     nixosConfigurations =
-      nixpkgs.lib.genAttrs ["white-dwarf" "red-giant" "pandora"]
+      nixpkgs.lib.genAttrs ["white-dwarf" "red-giant" "pandora" "milano"]
       (hostName:
         nixpkgs.lib.nixosSystem {
           system = systemSettings.system;
