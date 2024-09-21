@@ -11,6 +11,7 @@
     /etc/nixos/hardware-configuration.nix
     ../common.nix
 
+    ./homepage-dashboard.nix
     ./cockpit
   ];
 
