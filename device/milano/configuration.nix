@@ -29,6 +29,9 @@
     recommendedTlsSettings = true;
   };
 
+  networking.firewall.allowedTCPPorts = [ 80 ];
+  networking.firewall.allowedUDPPorts = [ 80 ];
+
   services.openssh.enable = true;
 
   # security.acme.defaults.email = userSettings.email;
