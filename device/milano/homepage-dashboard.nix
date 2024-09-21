@@ -63,7 +63,7 @@
             {
               "Cockpit" = {
                 description = "Cockpit for system monitoring";
-                href = "http://cockpit.home.io/";
+                href = "http://cockpit.milano.io/";
               };
             }
           ];
