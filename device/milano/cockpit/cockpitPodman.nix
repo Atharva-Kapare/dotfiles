@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
 
   src = fetchzip {
     url = "https://github.com/cockpit-project/${pname}/releases/download/${version}/${pname}-${version}.tar.xz";
-    sha256 = "sha256-7ibC1tUyVmabJ9yLFZQJGC/bBplqWjsBxORKyioQ8bE=";
+    sha256 = "sha256-boMOhXfhSJuskHEERBR4HEj8Aq/suJ1b7/jifuEzrjI=";
   };
 
   nativeBuildInputs = [
