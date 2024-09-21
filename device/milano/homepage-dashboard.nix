@@ -12,7 +12,7 @@
     homepage-dashboard = {
       enable = true;
       openFirewall = true;
-      listenPort = 80;
+      listenPort = 8082;
 
       widgets = [
         {
@@ -92,7 +92,7 @@
       # enableACME = true;
       default = true;
       locations."/" = {
-        proxyPass = "http://localhost:80/";
+        proxyPass = "http://localhost:8082/";
         proxyWebsockets = true;
       };
     };
