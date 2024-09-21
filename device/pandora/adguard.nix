@@ -22,6 +22,14 @@ in {
               domain = "home.io";
               answer = "10.11.12.101";
             }
+            {
+              domain = "*.milano.io";
+              answer = "10.11.12.19";
+            }
+            {
+              domain = "milano.io";
+              answer = "10.11.12.19";
+            }
           ];
         };
       };
