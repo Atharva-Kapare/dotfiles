@@ -24,7 +24,7 @@ in
       };
     };
 
-    nginx.virtualHosts."cockpit.home.io" = {
+    nginx.virtualHosts."cockpit.milano.io" = {
       # addSSL = true;
       # enableACME = true;
       locations."/" = {
