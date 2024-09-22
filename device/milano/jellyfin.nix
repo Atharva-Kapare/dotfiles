@@ -8,6 +8,13 @@
      
   ];
 
+  users.groups.multimedia = { };
+  users.users."ak".extraGroups = [ "arrr" ];
+
+  systemd.tmpfiles.rules = [
+    "d /home/ak/Media 0770 - arrr - -"
+  ];
+
   services = {
 
     # 8096/tcp is used by default for HTTP traffic. You can change this in the dashboard.
@@ -17,12 +24,14 @@
     jellyfin = {
       enable = true;
       openFirewall = true;
+      group = "arrr"
     };
 
     jellyseerr = {
       enable = true;
       port = 5055;
       openFirewall = true;
+      group = "arrr"
     };
 
 
