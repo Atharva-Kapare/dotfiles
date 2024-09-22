@@ -27,7 +27,7 @@
             WEBUI_PORT = "8081";
             # PUID = "600";
             # PGID = "100";
-            # VPN_ENABLED = "yes";
+            VPN_ENABLED = "no";
             # VPN_CLIENT = "wireguard";
             # STRICT_PORT_FORWARD = "yes";
             # ENABLE_PRIVOXY = "yes";
