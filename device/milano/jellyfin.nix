@@ -24,14 +24,14 @@
     jellyfin = {
       enable = true;
       openFirewall = true;
-      group = "arrr"
+      group = "arrr";
     };
 
     jellyseerr = {
       enable = true;
       port = 5055;
       openFirewall = true;
-      group = "arrr"
+      group = "arrr";
     };
 
 
