@@ -23,7 +23,7 @@
       enable = true;
       port = 5055;
       openFirewall = true;
-    }
+    };
   };
 
   nginx.virtualHosts."jellyfin.milano.io" = {
