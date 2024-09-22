@@ -8,6 +8,11 @@
      
   ];
 
+    systemd.tmpfiles.rules = [
+        "d /Media/data 0770 - arrr - -"
+        "d /Media/qbitvpn 0770 - arrr - -"
+    ];
+
   virtualisation.oci-containers.containers = {
     qbitVPN = {
         image = "docker.io/binhex/arch-qbittorrentvpn:latest";
