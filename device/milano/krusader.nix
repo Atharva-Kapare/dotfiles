@@ -39,7 +39,7 @@
         # addSSL = true;
         # enableACME = true;
         locations."/" = {
-          proxyPass = "http://localhost:8081/";
+          proxyPass = "http://localhost:6080/vnc.html?resize=remote&host=localhost&port=6080&&autoconnect=1";
           proxyWebsockets = true;
         };
     };
