@@ -77,8 +77,14 @@
           "Media" = [
             {
               "Jellyfin" = {
-                description = "Homepage is the best";
-                href = "http://localhost/";
+                description = "Watch all your content";
+                href = "http://jellyfin.milano.io/";
+              };
+            }
+            {
+              "Jellyseerr" = {
+                description = "Request all your content";
+                href = "http://jellyseerr.milano.io/";
               };
             }
           ];
