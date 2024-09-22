@@ -12,7 +12,7 @@
   users.users."ak".extraGroups = [ "arrr" ];
 
   systemd.tmpfiles.rules = [
-    "d /home/ak/Media 700 - arrr - -"
+    "d /Media 0770 - arrr - -"
   ];
 
   services = {
