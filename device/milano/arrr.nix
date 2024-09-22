@@ -30,6 +30,11 @@
             DELUGE_DAEMON_LOG_LEVEL = "debug";
             DELUGE_WEB_LOG_LEVEL = "debug";
         };
+        volumes = [
+            "/Media/qbitvpn:/config"
+            "/Media/data:/data"
+            "/etc/localtime:/etc/localtime:ro"
+        ];
         autoStart = true;
     };
   };
