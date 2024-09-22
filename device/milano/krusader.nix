@@ -23,8 +23,8 @@
         ];
         environment = {
             WEBUI_PORT = "8081";
-            PUID = "1000";
-            PGID = "100";
+            PUID = "0";
+            PGID = "0";
         };
         volumes = [
           "/etc/localtime:/etc/localtime:ro"
