@@ -14,6 +14,8 @@
     ./homepage-dashboard.nix
     ./cockpit
     ./jellyfin.nix
+    ./arrr.nix
+    
   ];
 
   # Useful other development tools
