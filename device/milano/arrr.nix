@@ -10,7 +10,7 @@
 
   virtualisation.oci-containers.containers = {
     qbitVPN = {
-        image = "binhex/arch-qbittorrentvpn:latest";
+        image = "docker.io/binhex/arch-qbittorrentvpn:latest";
         extraOptions = [ "--cap-add=NET_ADMIN" ];
         ports = [
             "6882:6881"
