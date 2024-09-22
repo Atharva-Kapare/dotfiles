@@ -25,15 +25,15 @@
         ];
         environment = {
             WEBUI_PORT = "8081";
-            PUID = "600";
-            PGID = "100";
-            VPN_ENABLED = "yes";
-            VPN_CLIENT = "wireguard";
-            STRICT_PORT_FORWARD = "yes";
-            ENABLE_PRIVOXY = "yes";
-            DEBUG = "true";
-            DELUGE_DAEMON_LOG_LEVEL = "debug";
-            DELUGE_WEB_LOG_LEVEL = "debug";
+            # PUID = "600";
+            # PGID = "100";
+            # VPN_ENABLED = "yes";
+            # VPN_CLIENT = "wireguard";
+            # STRICT_PORT_FORWARD = "yes";
+            # ENABLE_PRIVOXY = "yes";
+            # DEBUG = "true";
+            # DELUGE_DAEMON_LOG_LEVEL = "debug";
+            # DELUGE_WEB_LOG_LEVEL = "debug";
         };
         volumes = [
             "/Media/qbitvpn:/config"
