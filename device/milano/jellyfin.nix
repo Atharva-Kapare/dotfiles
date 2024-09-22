@@ -8,7 +8,7 @@
      
   ];
 
-  users.groups.multimedia = { };
+  users.groups.arrr = { };
   users.users."ak".extraGroups = [ "arrr" ];
 
   systemd.tmpfiles.rules = [
