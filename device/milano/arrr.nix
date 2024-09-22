@@ -31,7 +31,7 @@
             DELUGE_WEB_LOG_LEVEL = "debug";
         };
         autoStart = true;
-    }
+    };
   };
 
   services = {
