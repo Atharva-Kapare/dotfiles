@@ -13,6 +13,7 @@
 
     ./homepage-dashboard.nix
     ./cockpit
+    ./jellyfin.nix
   ];
 
   # Useful other development tools
