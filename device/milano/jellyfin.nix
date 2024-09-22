@@ -11,8 +11,8 @@
   services.jellyfin = {
     enable = true;
     openFirewall = true;
-    
-  }
+
+  };
 
     # 8096/tcp is used by default for HTTP traffic. You can change this in the dashboard.
     # 8920/tcp is used by default for HTTPS traffic. You can change this in the dashboard.
