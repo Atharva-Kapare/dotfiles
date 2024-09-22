@@ -26,25 +26,23 @@
     };
 
 
-    # nginx.virtualHosts."jellyfin.milano.io" = {
-    #     # addSSL = true;
-    #     # enableACME = true;
-    #     default = true;
-    #     locations."/" = {
-    #       proxyPass = "http://localhost:8096/";
-    #       proxyWebsockets = true;
-    #     };
-    # };
+    nginx.virtualHosts."jellyfin.milano.io" = {
+        # addSSL = true;
+        # enableACME = true;
+        locations."/" = {
+          proxyPass = "http://localhost:8096/";
+          proxyWebsockets = true;
+        };
+    };
 
-    # nginx.virtualHosts."jellyseerr.milano.io" = {
-    #     # addSSL = true;
-    #     # enableACME = true;
-    #     default = true;
-    #     locations."/" = {
-    #       proxyPass = "http://localhost:5055/";
-    #       proxyWebsockets = true;
-    #     };
-    # };
+    nginx.virtualHosts."jellyseerr.milano.io" = {
+        # addSSL = true;
+        # enableACME = true;
+        locations."/" = {
+          proxyPass = "http://localhost:5055/";
+          proxyWebsockets = true;
+        };
+    };
   };
 
   
