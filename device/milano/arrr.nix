@@ -61,7 +61,7 @@
         PUID = "1000";
         # PGID = "991";
         PGID = "1000";
-        RUN_OPTS="--ProxyConnection=10.11.12.19:8118"
+        RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
       };
       volumes = [
           "/Media/Shows:/tv"
