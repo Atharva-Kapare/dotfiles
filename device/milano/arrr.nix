@@ -55,7 +55,7 @@
           "--network=container:qbitVPN"
       ];
       ports = [
-          "8989:8989" # For non-SSL connections
+          "127.0.0.1:8989:8989" # For non-SSL connections
           # "9897:9897" # For SSL connections
       ];
       environment = {
