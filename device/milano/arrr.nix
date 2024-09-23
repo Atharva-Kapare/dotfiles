@@ -12,7 +12,6 @@
         "d /Media/data 0770 - arrr - -"
         "d /Media/qbitvpn 0770 - arrr - -"
         "d /Media/sonarr 0770 - arrr - -"
-        "d /Media/sonarr/watched 0770 - arrr - -"
     ];
 
   virtualisation.oci-containers.containers = {
@@ -51,21 +50,20 @@
     };
 
     sonarr = {
-      image = "docker.io/binhex/arch-sonarr:latest";
+      image = "lscr.io/linuxserver/sonarr:latest";
       extraOptions = [
           "--network=container:qbitVPN"
       ];
       ports = [
           "8989:8989" # For non-SSL connections
-          "9897:9897" # For SSL connections
+          # "9897:9897" # For SSL connections
       ];
       environment = {
           PUID = "1000";
           PGID = "991";
       };
       volumes = [
-          "/Media/Shows:/media"
-          "/Media/sonarr/watched:/data"
+          "/Media/Shows:/tv"
           "/Media/sonarr:/config"
           "/etc/localtime:/etc/localtime:ro"
       ];
