@@ -24,6 +24,19 @@
 
   ];
 
+  systemd.tmpfiles.rules = [ "d /var/ftp 2770 users users - -" ];
+
+  services.vsftpd = {
+    enable = true;
+    writeEnable = true;
+    localUsers = true;
+    localRoot = "/var/ftp";
+    extraConfig = ''
+      local_umask=007
+    '';
+  };
+
+
   services.nginx = {
     enable = true;
 
