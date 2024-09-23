@@ -59,8 +59,9 @@
           # "9897:9897" # For SSL connections
       ];
       environment = {
-          PUID = "1000";
-          PGID = "991";
+        PUID = "1000";
+        # PGID = "991";
+        PGID = "1000";
       };
       volumes = [
           "/Media/Shows:/tv"
