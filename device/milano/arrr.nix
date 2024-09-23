@@ -55,7 +55,7 @@
       extraOptions = [
       ];
       ports = [
-          "9696:9696" # For non-SSL connections
+          "9696:9696"
       ];
       environment = {
         PUID = "1000";
@@ -65,6 +65,20 @@
       };
       volumes = [
           "/Media/prowlarr:/config"
+      ];
+      autoStart = true;
+    };
+
+    flaresolverr = {
+      image = "ghcr.io/flaresolverr/flaresolverr:latest";
+      extraOptions = [
+      ];
+      ports = [
+          "8191:8191"
+      ];
+      environment = {
+      };
+      volumes = [
       ];
       autoStart = true;
     };
@@ -92,8 +106,8 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 8989 9696 ];
-  networking.firewall.allowedUDPPorts = [ 8989 9696 ];
+  networking.firewall.allowedTCPPorts = [ 9696 8191 8989 ];
+  networking.firewall.allowedUDPPorts = [ 9696 8191 8989 ];
 
   services = {
     nginx.virtualHosts."qbit.milano.io" = {
