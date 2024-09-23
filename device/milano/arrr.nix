@@ -12,6 +12,7 @@
         "d /Media/data 0770 - arrr - -"
         "d /Media/qbitvpn 0770 - arrr - -"
         "d /Media/sonarr 0770 - arrr - -"
+        "d /Media/prowlarr 0770 - arrr - -"
     ];
 
   virtualisation.oci-containers.containers = {
@@ -49,6 +50,25 @@
         autoStart = true;
     };
 
+    prowlarr = {
+      image = "lscr.io/linuxserver/prowlarr:latest";
+      extraOptions = [
+      ];
+      ports = [
+          "9696:9696" # For non-SSL connections
+      ];
+      environment = {
+        PUID = "1000";
+        # PGID = "991";
+        PGID = "1000";
+        RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
+      };
+      volumes = [
+          "/Media/prowlarr:/config"
+      ];
+      autoStart = true;
+    };
+
     sonarr = {
       image = "lscr.io/linuxserver/sonarr:latest";
       extraOptions = [
@@ -72,8 +92,8 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 8989 ];
-  networking.firewall.allowedUDPPorts = [ 8989 ];
+  networking.firewall.allowedTCPPorts = [ 8989 9696 ];
+  networking.firewall.allowedUDPPorts = [ 8989 9696 ];
 
   services = {
     nginx.virtualHosts."qbit.milano.io" = {
@@ -97,6 +117,13 @@
     nginx.virtualHosts."sonarr.milano.io" = {
       locations."/" = {
         proxyPass = "http://localhost:8989/";
+        proxyWebsockets = true;
+      };
+    };
+
+    nginx.virtualHosts."prowlarr.milano.io" = {
+      locations."/" = {
+        proxyPass = "http://localhost:9696/";
         proxyWebsockets = true;
       };
     };
