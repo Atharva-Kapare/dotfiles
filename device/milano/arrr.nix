@@ -59,6 +59,15 @@
         };
     };
 
+    nginx.virtualHosts."proxy.milano.io" = {
+        # addSSL = true;
+        # enableACME = true;
+        locations."/" = {
+          proxyPass = "http://localhost:8118/";
+          proxyWebsockets = true;
+        };
+    };
+
   };
 
 }
