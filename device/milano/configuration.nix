@@ -35,6 +35,9 @@
     localRoot = "/var/ftp";
     extraConfig = ''
       local_umask=007
+      pasv_enable=Yes
+      pasv_min_port=51000
+      pasv_max_port=51999
     '';
   };
 
@@ -49,7 +52,9 @@
 
   # 80 for nginx
   # 21 for the ftp server, also open 20 if you want ftp client
+  # The range 51000 to 51999 is needed for vsftpd to connect clients to it dynamically
 
+  networking.firewall.allowedTCPPortRanges = [ { from = 51000; to = 51999; } ];
   networking.firewall.allowedTCPPorts = [ 80 21 ];
   networking.firewall.allowedUDPPorts = [ 80 ];
 
