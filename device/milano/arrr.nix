@@ -71,7 +71,7 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 8989 ];
+  # networking.firewall.allowedTCPPorts = [ 8989 ];
 
   services = {
     nginx.virtualHosts."qbit.milano.io" = {
