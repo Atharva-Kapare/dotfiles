@@ -15,7 +15,7 @@
     ./cockpit
     ./jellyfin.nix
     ./arrr.nix
-    ./krusader.nix
+    # ./krusader.nix
     
   ];
 
