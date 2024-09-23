@@ -11,6 +11,8 @@
     systemd.tmpfiles.rules = [
         "d /Media/data 0770 - arrr - -"
         "d /Media/qbitvpn 0770 - arrr - -"
+        "d /Media/sonarr 0770 - arrr - -"
+        "d /Media/sonarr/watched 0770 - arrr - -"
     ];
 
   virtualisation.oci-containers.containers = {
@@ -47,6 +49,28 @@
         ];
         autoStart = true;
     };
+
+    sonarr = {
+      image = "docker.io/binhex/arch-sonarr:latest";
+      extraOptions = [
+          "--network=container:qbitVPN"
+      ];
+      ports = [
+          "8989:8989" # For non-SSL connections
+          "9897:9897" # For SSL connections
+      ];
+      environment = {
+          PUID = "1000";
+          PGID = "991";
+      };
+      volumes = [
+          "/Media/Shows:/media"
+          "/Media/sonarr/watched:/data"
+          "/Media/sonarr:/config"
+          "/etc/localtime:/etc/localtime:ro"
+      ];
+      autoStart = true;
+    };
   };
 
   services = {
@@ -66,6 +90,13 @@
           proxyPass = "http://localhost:8118/";
           proxyWebsockets = true;
         };
+    };
+
+    nginx.virtualHosts."sonarr.milano.io" = {
+      locations."/" = {
+        proxyPass = "http://localhost:8989/";
+        proxyWebsockets = true;
+      };
     };
 
   };
