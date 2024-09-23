@@ -16,7 +16,10 @@
   virtualisation.oci-containers.containers = {
     qbitVPN = {
         image = "docker.io/binhex/arch-qbittorrentvpn:latest";
-        extraOptions = [ "--cap-add=NET_ADMIN" ];
+        extraOptions = [
+            "--sysctl=\"net.ipv4.conf.all.src_valid_mark=1\""
+            "--privileged=true"
+        ];
         ports = [
             "6882:6881"
             "6882:6881/udp"
@@ -27,10 +30,11 @@
             WEBUI_PORT = "8081";
             # PUID = "600";
             # PGID = "100";
-            VPN_ENABLED = "no";
-            # VPN_CLIENT = "wireguard";
-            # STRICT_PORT_FORWARD = "yes";
-            # ENABLE_PRIVOXY = "yes";
+            VPN_ENABLED = "yes";
+            VPN_PROV= "custom";
+            VPN_CLIENT = "wireguard";
+            STRICT_PORT_FORWARD = "yes";
+            ENABLE_PRIVOXY = "yes";
             # DEBUG = "true";
             # DELUGE_DAEMON_LOG_LEVEL = "debug";
             # DELUGE_WEB_LOG_LEVEL = "debug";
