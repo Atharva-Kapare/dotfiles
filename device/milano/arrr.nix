@@ -93,13 +93,13 @@
       ];
       environment = {
         PUID = "1000";
-        # PGID = "991";
-        PGID = "1000";
+        PGID = "991";
+        # PGID = "1000";
         RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
       };
       volumes = [
+          "./configs/sonarr:/config"
           "/Media/Shows:/tv"
-          "/Media/sonarr:/config"
           "/etc/localtime:/etc/localtime:ro"
       ];
       autoStart = true;
