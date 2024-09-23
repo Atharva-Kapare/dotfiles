@@ -73,6 +73,8 @@
     };
   };
 
+  networking.firewall.allowedTCPPorts = [ 8989 ];
+
   services = {
     nginx.virtualHosts."qbit.milano.io" = {
         # addSSL = true;
