@@ -52,7 +52,6 @@
     sonarr = {
       image = "lscr.io/linuxserver/sonarr:latest";
       extraOptions = [
-          "--network=container:qbitVPN"
       ];
       ports = [
           "127.0.0.1:8989:8989" # For non-SSL connections
@@ -62,6 +61,7 @@
         PUID = "1000";
         # PGID = "991";
         PGID = "1000";
+        RUN_OPTS="--ProxyConnection=10.11.12.19:8118"
       };
       volumes = [
           "/Media/Shows:/tv"
