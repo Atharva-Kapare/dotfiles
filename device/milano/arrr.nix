@@ -35,7 +35,7 @@
             VPN_CLIENT = "wireguard";
             STRICT_PORT_FORWARD = "yes";
             ENABLE_PRIVOXY = "yes";
-            LAN_NETWORK="10.11.12.0/24"
+            LAN_NETWORK="10.11.12.0/24";
             # DEBUG = "true";
             # DELUGE_DAEMON_LOG_LEVEL = "debug";
             # DELUGE_WEB_LOG_LEVEL = "debug";
