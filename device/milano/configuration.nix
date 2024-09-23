@@ -37,8 +37,6 @@
       local_umask=007
     '';
   };
-  
-  networking.firewall.allowedTCPPorts = [ 2121 ];
 
   services.nginx = {
     enable = true;
@@ -49,7 +47,10 @@
     recommendedTlsSettings = true;
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 ];
+  # 80 for nginx
+  # 21 for the ftp server, also open 20 if you want ftp client
+
+  networking.firewall.allowedTCPPorts = [ 80 21 ];
   networking.firewall.allowedUDPPorts = [ 80 ];
 
   services.openssh.enable = true;
