@@ -30,12 +30,15 @@
     enable = true;
     writeEnable = true;
     localUsers = true;
+    userlist = [ "ak" ];
+    userlistEnable = true;
     localRoot = "/var/ftp";
     extraConfig = ''
       local_umask=007
     '';
   };
-
+  
+  networking.firewall.allowedTCPPorts = [ 2121 ];
 
   services.nginx = {
     enable = true;
