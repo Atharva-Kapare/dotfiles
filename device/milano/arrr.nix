@@ -28,8 +28,8 @@
         ];
         environment = {
             WEBUI_PORT = "8081";
-            # PUID = "600";
-            # PGID = "100";
+            PUID = "1000";
+            PGID = "991";
             VPN_ENABLED = "yes";
             VPN_PROV= "custom";
             VPN_CLIENT = "wireguard";
