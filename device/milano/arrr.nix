@@ -12,16 +12,16 @@
   users.users."ak".extraGroups = [ "arrr" ];
 
   systemd.tmpfiles.rules = [
-    "d /config/jellyfin 0770 - arrr - -"
-    "d /config/jellyseerr 0770 - arrr - -"
-    "d /config/prowlarr 0770 - arrr - -"
-    "d /config/sonarr 0770 - arrr - -"
-    "d /config/radarr 0770 - arrr - -"
-    "d /config/qbitvpn 0770 - arrr - -"
-    "d /data/torrents/movies 0770 - arrr - -"
-    "d /data/torrents/tv 0770 - arrr - -"
-    "d /data/media/movies 0770 - arrr - -"
-    "d /data/media/tv 0770 - arrr - -"
+    "d /config/jellyfin 775 - arrr - -"
+    "d /config/jellyseerr 775 - arrr - -"
+    "d /config/prowlarr 775 - arrr - -"
+    "d /config/sonarr 775 - arrr - -"
+    "d /config/radarr 775 - arrr - -"
+    "d /config/qbitvpn 775 - arrr - -"
+    "d /data/torrents/movies 775 - arrr - -"
+    "d /data/torrents/tv 775 - arrr - -"
+    "d /data/media/movies 775 - arrr - -"
+    "d /data/media/tv 775 - arrr - -"
   ];
 
   virtualisation.oci-containers.containers = {
