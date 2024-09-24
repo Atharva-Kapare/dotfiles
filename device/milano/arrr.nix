@@ -61,7 +61,7 @@
     };
 
     prowlarr = {
-      image = "lscr.io/linuxserver/prowlarr:latest";
+      image = "ghcr.io/hotio/prowlarr";
       extraOptions = [
       ];
       ports = [
@@ -71,10 +71,11 @@
         PUID = "1000";
         # PGID = "991";
         PGID = "1000";
+        UMASK=002;
         RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
       };
       volumes = [
-          "/Media/prowlarr:/config"
+          "/config/prowlarr:/config"
       ];
       autoStart = true;
     };
