@@ -13,7 +13,7 @@
 
     ./homepage-dashboard.nix
     ./cockpit
-    ./jellyfin.nix
+    # ./jellyfin.nix
     ./arrr.nix
     # ./krusader.nix
     

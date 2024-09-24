@@ -14,6 +14,8 @@
         "d /Media/sonarr 0770 - arrr - -"
         "d /Media/prowlarr 0770 - arrr - -"
 
+        "d /config/jellyfin 0770 - arrr - -"
+        "d /config/jellyseerr 0770 - arrr - -"
         "d /config/prowlarr 0770 - arrr - -"
         "d /config/sonarr 0770 - arrr - -"
         "d /config/radarr 0770 - arrr - -"
@@ -26,6 +28,45 @@
     ];
 
   virtualisation.oci-containers.containers = {
+    jellyfin = {
+      image = "ghcr.io/hotio/jellyfin";
+      extraOptions = [
+      ];
+      ports = [
+          "8096:8096"
+      ];
+      environment = {
+        PUID = "1000";
+        PGID = "991";
+        # PGID = "1000";
+        UMASK="002";
+      };
+      volumes = [
+          "/config/jellyfin:/config"
+          "/data/media:/data/media"
+      ];
+      autoStart = true;
+    };
+
+    jellyseerr = {
+      image = "ghcr.io/hotio/jellyseerr";
+      extraOptions = [
+      ];
+      ports = [
+          "5055:5055"
+      ];
+      environment = {
+        PUID = "1000";
+        PGID = "991";
+        # PGID = "1000";
+        UMASK="002";
+      };
+      volumes = [
+          "/config/jellyseerr:/config"
+      ];
+      autoStart = true;
+    };
+
     qbitVPN = {
         image = "docker.io/binhex/arch-qbittorrentvpn:latest";
         extraOptions = [
@@ -69,8 +110,8 @@
       ];
       environment = {
         PUID = "1000";
-        # PGID = "991";
-        PGID = "1000";
+        PGID = "991";
+        # PGID = "1000";
         UMASK="002";
         RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
       };
@@ -123,6 +164,24 @@
   networking.firewall.allowedUDPPorts = [ 9696 8191 8989 ];
 
   services = {
+
+    nginx.virtualHosts."jellyfin.milano.io" = {
+      # addSSL = true;
+      # enableACME = true;
+      locations."/" = {
+        proxyPass = "http://localhost:8096/";
+        proxyWebsockets = true;
+      };
+    };
+
+    nginx.virtualHosts."jellyseerr.milano.io" = {
+        # addSSL = true;
+        # enableACME = true;
+        locations."/" = {
+          proxyPass = "http://localhost:5055/";
+          proxyWebsockets = true;
+        };
+    };
     nginx.virtualHosts."qbit.milano.io" = {
         # addSSL = true;
         # enableACME = true;
