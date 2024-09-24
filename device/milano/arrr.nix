@@ -8,18 +8,21 @@
      
   ];
 
-    systemd.tmpfiles.rules = [
-      "d /config/jellyfin 0770 - arrr - -"
-      "d /config/jellyseerr 0770 - arrr - -"
-      "d /config/prowlarr 0770 - arrr - -"
-      "d /config/sonarr 0770 - arrr - -"
-      "d /config/radarr 0770 - arrr - -"
-      "d /config/qbitvpn 0770 - arrr - -"
-      "d /data/torrents/movies 0770 - arrr - -"
-      "d /data/torrents/tv 0770 - arrr - -"
-      "d /data/media/movies 0770 - arrr - -"
-      "d /data/media/tv 0770 - arrr - -"
-    ];
+  users.groups.arrr = { };
+  users.users."ak".extraGroups = [ "arrr" ];
+
+  systemd.tmpfiles.rules = [
+    "d /config/jellyfin 0770 - arrr - -"
+    "d /config/jellyseerr 0770 - arrr - -"
+    "d /config/prowlarr 0770 - arrr - -"
+    "d /config/sonarr 0770 - arrr - -"
+    "d /config/radarr 0770 - arrr - -"
+    "d /config/qbitvpn 0770 - arrr - -"
+    "d /data/torrents/movies 0770 - arrr - -"
+    "d /data/torrents/tv 0770 - arrr - -"
+    "d /data/media/movies 0770 - arrr - -"
+    "d /data/media/tv 0770 - arrr - -"
+  ];
 
   virtualisation.oci-containers.containers = {
     jellyfin = {
