@@ -13,6 +13,16 @@
         "d /Media/qbitvpn 0770 - arrr - -"
         "d /Media/sonarr 0770 - arrr - -"
         "d /Media/prowlarr 0770 - arrr - -"
+
+        "d /config/prowlarr 0770 - arrr - -"
+        "d /config/sonarr 0770 - arrr - -"
+        "d /config/radarr 0770 - arrr - -"
+        "d /config/qbitvpn 0770 - arrr - -"
+
+        "d /data/torrents/movies 0770 - arrr - -"
+        "d /data/torrents/tv 0770 - arrr - -"
+        "d /data/media/movies 0770 - arrr - -"
+        "d /data/media/tv 0770 - arrr - -"
     ];
 
   virtualisation.oci-containers.containers = {
@@ -43,8 +53,8 @@
             # DELUGE_WEB_LOG_LEVEL = "debug";
         };
         volumes = [
-            "/Media/qbitvpn:/config"
-            "/Media/data:/data"
+            "/config/qbitvpn:/config"
+            "/data/torrents:/data/torrents"
             "/etc/localtime:/etc/localtime:ro"
         ];
         autoStart = true;
@@ -84,7 +94,7 @@
     };
 
     sonarr = {
-      image = "lscr.io/linuxserver/sonarr:latest";
+      image = "ghcr.io/hotio/sonarr";
       extraOptions = [
       ];
       ports = [
@@ -98,10 +108,11 @@
         RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
       };
       volumes = [
-          "/Media/Shows:/tv"
-          "/Media/data:/downloads"
-          "/Media/sonarr:/config"
-          "/etc/localtime:/etc/localtime:ro"
+          # - /<host_folder_config>:/config
+          # - /<host_folder_data>:/data
+
+          "/config/sonarr:/config"
+          "/data:/data"
       ];
       autoStart = true;
     };
