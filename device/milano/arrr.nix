@@ -132,6 +132,29 @@
       autoStart = true;
     };
 
+    radarr = {
+      image = "ghcr.io/hotio/radarr";
+      extraOptions = [
+      ];
+      ports = [
+          "7878:7878"
+      ];
+      environment = {
+        PUID = "1000";
+        PGID = "991";
+        # PGID = "1000";
+        RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
+      };
+      volumes = [
+          # - /<host_folder_config>:/config
+          # - /<host_folder_data>:/data
+
+          "/config/radarr:/config"
+          "/data:/data"
+      ];
+      autoStart = true;
+    };
+
     sonarr = {
       image = "ghcr.io/hotio/sonarr";
       extraOptions = [
@@ -200,6 +223,13 @@
     nginx.virtualHosts."sonarr.milano.io" = {
       locations."/" = {
         proxyPass = "http://localhost:8989/";
+        proxyWebsockets = true;
+      };
+    };
+
+    nginx.virtualHosts."radarr.milano.io" = {
+      locations."/" = {
+        proxyPass = "http://localhost:7878/";
         proxyWebsockets = true;
       };
     };
