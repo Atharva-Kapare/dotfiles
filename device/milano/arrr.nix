@@ -99,6 +99,7 @@
       };
       volumes = [
           "/Media/Shows:/tv"
+          "/Media/data:/downloads"
           "/Media/sonarr:/config"
           "/etc/localtime:/etc/localtime:ro"
       ];
