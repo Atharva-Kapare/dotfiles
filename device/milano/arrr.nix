@@ -9,22 +9,22 @@
   ];
 
     systemd.tmpfiles.rules = [
-        "d /Media/data 0770 - arrr - -"
-        "d /Media/qbitvpn 0770 - arrr - -"
-        "d /Media/sonarr 0770 - arrr - -"
-        "d /Media/prowlarr 0770 - arrr - -"
+      "d /Media/data 0770 - arrr - -"
+      "d /Media/qbitvpn 0770 - arrr - -"
+      "d /Media/sonarr 0770 - arrr - -"
+      "d /Media/prowlarr 0770 - arrr - -"
 
-        "d /config/jellyfin 0770 - arrr - -"
-        "d /config/jellyseerr 0770 - arrr - -"
-        "d /config/prowlarr 0770 - arrr - -"
-        "d /config/sonarr 0770 - arrr - -"
-        "d /config/radarr 0770 - arrr - -"
-        "d /config/qbitvpn 0770 - arrr - -"
+      "d /config/jellyfin 0770 - arrr - -"
+      "d /config/jellyseerr 0770 - arrr - -"
+      "d /config/prowlarr 0770 - arrr - -"
+      "d /config/sonarr 0770 - arrr - -"
+      "d /config/radarr 0770 - arrr - -"
+      "d /config/qbitvpn 0770 - arrr - -"
 
-        "d /data/torrents/movies 0770 - arrr - -"
-        "d /data/torrents/tv 0770 - arrr - -"
-        "d /data/media/movies 0770 - arrr - -"
-        "d /data/media/tv 0770 - arrr - -"
+      "d /data/torrents/movies 0770 - arrr - -"
+      "d /data/torrents/tv 0770 - arrr - -"
+      "d /data/media/movies 0770 - arrr - -"
+      "d /data/media/tv 0770 - arrr - -"
     ];
 
   virtualisation.oci-containers.containers = {
