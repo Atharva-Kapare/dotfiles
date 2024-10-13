@@ -13,11 +13,14 @@
 
   systemd.tmpfiles.rules = [
     "d /config/jellyfin 775 - arrr - -"
+    "d /config/plex 775 - arrr - -"
+    "d /config/plexTranscode 775 - arrr - -"
     "d /config/jellyseerr 775 - arrr - -"
     "d /config/prowlarr 775 - arrr - -"
     "d /config/sonarr 775 - arrr - -"
     "d /config/radarr 775 - arrr - -"
     "d /config/qbitvpn 775 - arrr - -"
+
     "d /data/torrents/movies 775 - arrr - -"
     "d /data/torrents/tv 775 - arrr - -"
     "d /data/media/movies 775 - arrr - -"
@@ -43,6 +46,24 @@
           "/data/media:/data/media"
       ];
       autoStart = true;
+    };
+
+    plex = {
+      image = "ghcr.io/hotio/plex";
+      ports = [
+        "32400:32400"
+      ];
+      environment = {
+        PUID = "1000";
+        PGID = "991";
+        # PGID = "1000";
+        UMASK="002";
+      };
+      volumes = [
+        "/config/plex:/config"
+        "/config/plexTranscode:/transcode"
+        "/data/media:/data"
+      ]
     };
 
     jellyseerr = {
