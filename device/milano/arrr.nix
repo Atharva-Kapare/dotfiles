@@ -215,6 +215,15 @@
       };
     };
 
+    nginx.virtualHosts."plex.milano.io" = {
+      # addSSL = true;
+      # enableACME = true;
+      locations."/" = {
+        proxyPass = "http://localhost:32400/";
+        proxyWebsockets = true;
+      };
+    };
+
     nginx.virtualHosts."jellyseerr.milano.io" = {
         # addSSL = true;
         # enableACME = true;
