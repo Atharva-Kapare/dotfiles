@@ -63,7 +63,7 @@
         "/config/plex:/config"
         "/config/plexTranscode:/transcode"
         "/data/media:/data"
-      ]
+      ];
     };
 
     jellyseerr = {
