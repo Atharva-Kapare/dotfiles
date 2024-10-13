@@ -85,7 +85,7 @@
               "Plex" = {
                 description = "Watch all your content";
                 href = "http://plex.milano.io/";
-              }
+              };
             }
             {
               "Jellyseerr" = {
