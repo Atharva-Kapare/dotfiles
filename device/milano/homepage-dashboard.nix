@@ -82,6 +82,12 @@
               };
             }
             {
+              "Plex" = {
+                description = "Watch all your content";
+                href = "http://plex.milano.io/";
+              }
+            }
+            {
               "Jellyseerr" = {
                 description = "Request all your content";
                 href = "http://jellyseerr.milano.io/";
