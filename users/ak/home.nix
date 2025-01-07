@@ -18,6 +18,7 @@
     ../../programs/terminal
     ../../programs/devbox
     ../../programs/zoxide
+    ../../programs/steam
   ];
 
   nixpkgs = {
