@@ -24,11 +24,11 @@ in {
             }
             {
               domain = "*.milano.io";
-              answer = "10.11.12.19";
+              answer = "10.11.12.201";
             }
             {
               domain = "milano.io";
-              answer = "10.11.12.19";
+              answer = "10.11.12.201";
             }
           ];
         };
