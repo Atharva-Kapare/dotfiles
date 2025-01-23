@@ -131,7 +131,7 @@
         PGID = "991";
         # PGID = "1000";
         UMASK="002";
-        RUN_OPTS="--ProxyConnection=qbitVPN:8118";
+        RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
       volumes = [
           "/config/prowlarr:/config"
@@ -164,7 +164,7 @@
         PUID = "1000";
         PGID = "991";
         # PGID = "1000";
-        RUN_OPTS="--ProxyConnection=qbitVPN:8118";
+        RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
       volumes = [
           # - /<host_folder_config>:/config
@@ -188,7 +188,7 @@
         PUID = "1000";
         PGID = "991";
         # PGID = "1000";
-        RUN_OPTS="--ProxyConnection=qbitVPN:8118";
+        RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
       volumes = [
           # - /<host_folder_config>:/config
