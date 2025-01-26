@@ -15,6 +15,16 @@
     ../common.nix
   ];
 
+  environment.systemPackages = [
+      pkgs.kdePackages.qtsvg
+      pkgs.kdePackages.qtmultimedia
+      pkgs.kdePackages.qtvirtualkeyboard
+      (pkgs.callPackage ../../systemPackages/sddm-astronaut-theme {
+          theme = "black_hole";
+
+      })
+  ];
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -22,11 +32,41 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  #  services.xserver.enable = true;
+  #  services.xserver.displayManager.gdm.enable = true;
+  #  services.xserver.desktopManager.gnome.enable = true;
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services = {
+    displayManager.sddm = {
+      enable = true; # Enable SDDM.
+      package = pkgs.kdePackages.sddm;
+      extraPackages = with pkgs; [
+        kdePackages.qtsvg
+        kdePackages.qtmultimedia
+        kdePackages.qtvirtualkeyboard
+      ];
+      wayland.enable = true;
+      theme = "sddm-astronaut-theme";
+      settings = {
+        Theme = {
+          CursorTheme = "Bibata-Modern-Ice";
+        };
+      };
+    };
+
+    xserver = {
+      enable = true;
+      # windowManager.gnome = {
+      #   enable = true;
+      #   extraPackages = with pkgs; [
+      #     rofi
+      #   ];
+      # };
+      desktopManager.gnome.enable = true;
+      videoDrivers = ["nvidia"];
+    };
+  };
+  #  services.xserver.videoDrivers = ["nvidia"];
 
   hardware = {
     graphics.enable = true;
