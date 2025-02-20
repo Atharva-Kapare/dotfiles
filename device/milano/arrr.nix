@@ -20,6 +20,7 @@
     "d /config/sonarr 775 - arrr - -"
     "d /config/radarr 775 - arrr - -"
     "d /config/qbitvpn 775 - arrr - -"
+    "d /config/sabnzb 775 - arrr - -"
 
     "d /data/torrents/movies 775 - arrr - -"
     "d /data/torrents/tv 775 - arrr - -"
@@ -117,6 +118,31 @@
             "/etc/localtime:/etc/localtime:ro"
         ];
         autoStart = true;
+    };
+
+    sabVPN = {
+      image = "docker.io/binhex/arch-sabnzbdvpn:latest";
+      extraOptions = [
+          "--sysctl=\"net.ipv4.conf.all.src_valid_mark=1\""
+          "--privileged=true"
+      ];
+      ports = [
+        "8080:8080"
+      ];
+      environment = {
+        PUID = "1000";
+        PGID = "991";
+        VPN_ENABLED = "yes";
+        STRICT_PORT_FORWARD = "yes";
+        ENABLE_PRIVOXY = "no";
+        ENABLE_SOCKS = "no";
+      };
+      volumes = [
+        "/config/sabnzb:/config"
+        "/data/nzb:/data"
+        "/etc/localtime:/etc/localtime:ro"
+      ];
+      autoStart = true;
     };
 
     prowlarr = {
