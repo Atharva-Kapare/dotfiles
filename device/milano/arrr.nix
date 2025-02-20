@@ -133,6 +133,8 @@
         PUID = "1000";
         PGID = "991";
         VPN_ENABLED = "yes";
+        VPN_PROV= "custom";
+        VPN_CLIENT = "wireguard";
         STRICT_PORT_FORWARD = "yes";
         ENABLE_PRIVOXY = "no";
         ENABLE_SOCKS = "no";
