@@ -139,7 +139,7 @@
       };
       volumes = [
         "/config/sabnzb:/config"
-        "/data/nzb:/data"
+        "/data/torrents:/data"
         "/etc/localtime:/etc/localtime:ro"
       ];
       autoStart = true;
