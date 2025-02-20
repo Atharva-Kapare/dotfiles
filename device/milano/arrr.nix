@@ -138,6 +138,7 @@
         STRICT_PORT_FORWARD = "yes";
         ENABLE_PRIVOXY = "no";
         ENABLE_SOCKS = "no";
+        LAN_NETWORK="10.11.12.0/24";
       };
       volumes = [
         "/config/sabnzb:/config"
