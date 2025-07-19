@@ -8,7 +8,9 @@
      
   ];
 
-  users.groups.arrr = { };
+  users.groups.arrr = {
+    gid = 995;
+  };
   users.users."ak".extraGroups = [ "arrr" ];
 
   systemd.tmpfiles.rules = [
@@ -38,8 +40,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "1000";
-        # PGID = "1000";
+        PGID = "995";
         UMASK="002";
       };
       volumes = [
@@ -56,8 +57,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "1000";
-        # PGID = "1000";
+        PGID = "995";
         UMASK="002";
       };
       volumes = [
@@ -76,8 +76,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "1000";
-        # PGID = "1000";
+        PGID = "995";
         UMASK="002";
       };
       volumes = [
@@ -101,7 +100,7 @@
         environment = {
             WEBUI_PORT = "8081";
             PUID = "1000";
-            PGID = "991";
+            PGID = "995";
             VPN_ENABLED = "yes";
             VPN_PROV= "custom";
             VPN_CLIENT = "wireguard";
@@ -131,7 +130,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "1000";
+        PGID = "995";
         VPN_ENABLED = "yes";
         VPN_PROV= "custom";
         VPN_CLIENT = "wireguard";
@@ -157,8 +156,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "1000";
-        # PGID = "1000";
+        PGID = "995";
         UMASK="002";
         RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
@@ -191,8 +189,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "1000";
-        # PGID = "1000";
+        PGID = "995";
         RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
       volumes = [
@@ -215,8 +212,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "1000";
-        # PGID = "1000";
+        PGID = "995";
         RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
       volumes = [
