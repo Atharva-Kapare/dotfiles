@@ -38,7 +38,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
+        PGID = "1000";
         # PGID = "1000";
         UMASK="002";
       };
@@ -56,7 +56,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
+        PGID = "1000";
         # PGID = "1000";
         UMASK="002";
       };
@@ -76,7 +76,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
+        PGID = "1000";
         # PGID = "1000";
         UMASK="002";
       };
@@ -131,7 +131,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
+        PGID = "1000";
         VPN_ENABLED = "yes";
         VPN_PROV= "custom";
         VPN_CLIENT = "wireguard";
@@ -157,7 +157,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
+        PGID = "1000";
         # PGID = "1000";
         UMASK="002";
         RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
@@ -191,7 +191,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
+        PGID = "1000";
         # PGID = "1000";
         RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
@@ -215,7 +215,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
+        PGID = "1000";
         # PGID = "1000";
         RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
