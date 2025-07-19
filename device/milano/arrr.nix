@@ -30,7 +30,7 @@
 
   virtualisation.oci-containers.containers = {
     jellyfin = {
-      image = "ghcr.io/hotio/jellyfin";
+      image = "jellyfin/jellyfin";
       extraOptions = [
       ];
       ports = [
@@ -44,7 +44,7 @@
       };
       volumes = [
           "/config/jellyfin:/config"
-          "/data/media:/data/media"
+          "/data/media:/media"
       ];
       autoStart = true;
     };
