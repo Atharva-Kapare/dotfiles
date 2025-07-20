@@ -16,6 +16,8 @@
     # ./jellyfin.nix
     ./arrr.nix
     ./krusader.nix
+
+    ./hosting
     
   ];
 
