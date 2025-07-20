@@ -44,5 +44,5 @@ in
       autoStart = true;
       restart = unless-stopped;
     };
-  }
+  };
 }
