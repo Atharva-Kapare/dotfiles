@@ -8,8 +8,6 @@ in
 {
 
   environment.systemPackages = with pkgs; [
-    cockpit # cockpit
-    cockpitPodman
   ];
 
   users.groups.hosting = {
@@ -42,7 +40,6 @@ in
         "/config/minecraft-server:/data"
       ];
       autoStart = true;
-      restart = unless-stopped;
     };
   };
 }
