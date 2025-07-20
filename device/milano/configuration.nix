@@ -17,7 +17,7 @@
     ./arrr.nix
     ./krusader.nix
 
-    ./hosting
+    # ./hosting
     
   ];
 
