@@ -13,8 +13,8 @@
   };
   users.users."ak".extraGroups = [ "arrr" ];
 
-  hardware.opengl.enable = true;
-  hardware.opengl.extraPackages = with pkgs; [
+  hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [
     vaapiVdpau
     libvdpau-va-gl
     mesa.drivers
