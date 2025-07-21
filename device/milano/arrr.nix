@@ -13,6 +13,15 @@
   };
   users.users."ak".extraGroups = [ "arrr" ];
 
+  hardware.opengl.enable = true;
+  hardware.opengl.extraPackages = with pkgs; [
+    vaapiVdpau
+    libvdpau-va-gl
+    mesa.drivers
+  ];
+
+  hardware.enableAllFirmware = true;
+
   systemd.tmpfiles.rules = [
     "d /config/jellyfin 0775 - arrr - -"
     "d /config/plex 0775 - arrr - -"
