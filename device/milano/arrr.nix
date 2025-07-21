@@ -5,7 +5,8 @@
 {
 
   environment.systemPackages = with pkgs; [
-     
+    vainfo
+    radeontop 
   ];
 
   users.groups.arrr = {
