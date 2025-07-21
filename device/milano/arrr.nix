@@ -43,6 +43,8 @@
     jellyfin = {
       image = "jellyfin/jellyfin";
       extraOptions = [
+        "--device=/dev/dri:/dev/dri"
+        "--group-add=video"
       ];
       ports = [
           "8096:8096"
