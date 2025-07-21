@@ -5,7 +5,7 @@
 {
 
   environment.systemPackages = with pkgs; [
-    vainfo
+    libva-utils
     radeontop 
   ];
 
