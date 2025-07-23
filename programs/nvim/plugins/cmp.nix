@@ -24,28 +24,28 @@
         formatting = {fields = ["kind" "abbr" "menu"];};
         sources = [
           {name = "nvim_lsp";}
-          {name = "emoji";}
+          #   {name = "emoji";}
           {
             name = "buffer"; # text within current buffer
-            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+            # option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
             keywordLength = 3;
           }
-          {
-            name = "path"; # file system paths
-            keywordLength = 3;
-          }
-          {
-            name = "luasnip"; # snippets
-            keywordLength = 3;
-          }
-          {
-            name = "cmdline"; # snippets
-            keywordLength = 3;
-          }
-          {
-            name = "treesitter";
-            keywordLength = 3;
-          }
+          #   {
+          #     name = "path"; # file system paths
+          #     keywordLength = 3;
+          #   }
+          #   {
+          #     name = "luasnip"; # snippets
+          #     keywordLength = 3;
+          #   }
+          #   {
+          #     name = "cmdline"; # snippets
+          #     keywordLength = 3;
+          #   }
+          #   {
+          #     name = "treesitter";
+          #     keywordLength = 3;
+          #   }
         ];
 
         window = {
