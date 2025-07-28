@@ -33,6 +33,7 @@
     "d /config/radarr 0775 - arrr - -"
     "d /config/qbitvpn 0775 - arrr - -"
     "d /config/sabnzb 0775 - arrr - -"
+    "d /config/bazarr 0775 - arrr - -"
 
     "d /data/torrents/movies 0775 - arrr - -"
     "d /data/torrents/tv 0775 - arrr - -"
@@ -232,6 +233,24 @@
           # - /<host_folder_data>:/data
 
           "/config/sonarr:/config"
+          "/data:/data"
+      ];
+      autoStart = true;
+    };
+
+    bazarr = {
+      image = "ghcr.io/hotio/bazarr";
+      extraOptions = [
+      ];
+      ports = [
+          "6767:6767"
+      ];
+      environment = {
+        PUID = "1000";
+        PGID = "995";
+      };
+      volumes = [
+          "/config/bazarr:/config"
           "/data:/data"
       ];
       autoStart = true;
