@@ -5,45 +5,59 @@
 {
 
   environment.systemPackages = with pkgs; [
-     
+    libva-utils
+    radeontop 
   ];
 
-  users.groups.arrr = { };
+  users.groups.arrr = {
+    gid = 995;
+  };
   users.users."ak".extraGroups = [ "arrr" ];
 
-  systemd.tmpfiles.rules = [
-    "d /config/jellyfin 775 - arrr - -"
-    "d /config/plex 775 - arrr - -"
-    "d /config/plexTranscode 775 - arrr - -"
-    "d /config/jellyseerr 775 - arrr - -"
-    "d /config/prowlarr 775 - arrr - -"
-    "d /config/sonarr 775 - arrr - -"
-    "d /config/radarr 775 - arrr - -"
-    "d /config/qbitvpn 775 - arrr - -"
+  hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [
+    vaapiVdpau
+    libvdpau-va-gl
+    mesa.drivers
+  ];
 
-    "d /data/torrents/movies 775 - arrr - -"
-    "d /data/torrents/tv 775 - arrr - -"
-    "d /data/media/movies 775 - arrr - -"
-    "d /data/media/tv 775 - arrr - -"
+  hardware.enableAllFirmware = true;
+
+  systemd.tmpfiles.rules = [
+    "d /config/jellyfin 0775 - arrr - -"
+    "d /config/plex 0775 - arrr - -"
+    "d /config/plexTranscode 0775 - arrr - -"
+    "d /config/jellyseerr 0775 - arrr - -"
+    "d /config/prowlarr 0775 - arrr - -"
+    "d /config/sonarr 0775 - arrr - -"
+    "d /config/radarr 0775 - arrr - -"
+    "d /config/qbitvpn 0775 - arrr - -"
+    "d /config/sabnzb 0775 - arrr - -"
+
+    "d /data/torrents/movies 0775 - arrr - -"
+    "d /data/torrents/tv 0775 - arrr - -"
+    "d /data/media/movies 0775 - arrr - -"
+    "d /data/media/tv 0775 - arrr - -"
   ];
 
   virtualisation.oci-containers.containers = {
     jellyfin = {
-      image = "ghcr.io/hotio/jellyfin";
+      image = "jellyfin/jellyfin";
       extraOptions = [
+        "--device=/dev/dri:/dev/dri"
+        "--group-add=video"
       ];
       ports = [
           "8096:8096"
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
-        # PGID = "1000";
+        PGID = "995";
         UMASK="002";
       };
       volumes = [
           "/config/jellyfin:/config"
-          "/data/media:/data/media"
+          "/data/media:/media"
       ];
       autoStart = true;
     };
@@ -55,8 +69,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
-        # PGID = "1000";
+        PGID = "995";
         UMASK="002";
       };
       volumes = [
@@ -75,8 +88,7 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
-        # PGID = "1000";
+        PGID = "995";
         UMASK="002";
       };
       volumes = [
@@ -100,7 +112,7 @@
         environment = {
             WEBUI_PORT = "8081";
             PUID = "1000";
-            PGID = "991";
+            PGID = "995";
             VPN_ENABLED = "yes";
             VPN_PROV= "custom";
             VPN_CLIENT = "wireguard";
@@ -119,6 +131,34 @@
         autoStart = true;
     };
 
+    sabVPN = {
+      image = "docker.io/binhex/arch-sabnzbdvpn:latest";
+      extraOptions = [
+          "--sysctl=\"net.ipv4.conf.all.src_valid_mark=1\""
+          "--privileged=true"
+      ];
+      ports = [
+        "8080:8080"
+      ];
+      environment = {
+        PUID = "1000";
+        PGID = "995";
+        VPN_ENABLED = "yes";
+        VPN_PROV= "custom";
+        VPN_CLIENT = "wireguard";
+        STRICT_PORT_FORWARD = "yes";
+        ENABLE_PRIVOXY = "no";
+        ENABLE_SOCKS = "no";
+        LAN_NETWORK="10.11.12.0/24";
+      };
+      volumes = [
+        "/config/sabnzb:/config"
+        "/data/torrents:/data/torrents"
+        "/etc/localtime:/etc/localtime:ro"
+      ];
+      autoStart = true;
+    };
+
     prowlarr = {
       image = "ghcr.io/hotio/prowlarr";
       extraOptions = [
@@ -128,10 +168,9 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
-        # PGID = "1000";
+        PGID = "995";
         UMASK="002";
-        RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
+        RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
       volumes = [
           "/config/prowlarr:/config"
@@ -162,9 +201,8 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
-        # PGID = "1000";
-        RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
+        PGID = "995";
+        RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
       volumes = [
           # - /<host_folder_config>:/config
@@ -186,9 +224,8 @@
       ];
       environment = {
         PUID = "1000";
-        PGID = "991";
-        # PGID = "1000";
-        RUN_OPTS="--ProxyConnection=10.11.12.19:8118";
+        PGID = "995";
+        RUN_OPTS="--ProxyConnection=10.11.12.201:8118";
       };
       volumes = [
           # - /<host_folder_config>:/config

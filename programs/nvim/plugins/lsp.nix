@@ -76,6 +76,7 @@
     lsp = {
       enable = true;
       servers = {
+        gopls.enable = true;
         bashls.enable = true;
         clangd.enable = true;
         nixd.enable = true;
