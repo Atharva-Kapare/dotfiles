@@ -123,6 +123,7 @@
     podman-compose # start group of containers for dev
 
     distrobox
+    ripgrep-all
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
