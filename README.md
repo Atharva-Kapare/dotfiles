@@ -11,3 +11,7 @@ I wouldn't recommend copying these, still a major wip
 - [] Harpoon nvim
 - [] Needs refactor:
   - [] Home manager needs to be modularised properly with lib.mkdefault etc
+
+# Fix for the version mismatch:
+
+sudo nix run nixpkgs/nixos-25.05#nixos-rebuild -- switch --flake . --impure
