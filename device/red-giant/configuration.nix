@@ -16,13 +16,12 @@
   ];
 
   environment.systemPackages = [
-      pkgs.kdePackages.qtsvg
-      pkgs.kdePackages.qtmultimedia
-      pkgs.kdePackages.qtvirtualkeyboard
-      (pkgs.callPackage ../../systemPackages/sddm-astronaut-theme {
-          theme = "black_hole";
-
-      })
+    pkgs.kdePackages.qtsvg
+    pkgs.kdePackages.qtmultimedia
+    pkgs.kdePackages.qtvirtualkeyboard
+    (pkgs.callPackage ../../systemPackages/sddm-astronaut-theme {
+      theme = "black_hole";
+    })
   ];
 
   programs.steam = {
@@ -54,17 +53,8 @@
       };
     };
 
-    xserver = {
-      enable = true;
-      # windowManager.gnome = {
-      #   enable = true;
-      #   extraPackages = with pkgs; [
-      #     rofi
-      #   ];
-      # };
-      desktopManager.gnome.enable = true;
-      videoDrivers = ["nvidia"];
-    };
+    desktopManager.gnome.enable = true;
+    # videoDrivers = ["nvidia"];
   };
   #  services.xserver.videoDrivers = ["nvidia"];
 
@@ -76,6 +66,7 @@
       # accessible via `nvidia-settings`.
       nvidiaSettings = true;
       modesetting.enable = true;
+      open = true;
 
       # Optionally, you may need to select the appropriate driver version for your specific GPU.
       package = config.boot.kernelPackages.nvidiaPackages.production;
