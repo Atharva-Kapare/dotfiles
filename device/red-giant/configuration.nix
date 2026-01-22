@@ -16,13 +16,12 @@
   ];
 
   environment.systemPackages = [
-      pkgs.kdePackages.qtsvg
-      pkgs.kdePackages.qtmultimedia
-      pkgs.kdePackages.qtvirtualkeyboard
-      (pkgs.callPackage ../../systemPackages/sddm-astronaut-theme {
-          theme = "black_hole";
-
-      })
+    pkgs.kdePackages.qtsvg
+    pkgs.kdePackages.qtmultimedia
+    pkgs.kdePackages.qtvirtualkeyboard
+    (pkgs.callPackage ../../systemPackages/sddm-astronaut-theme {
+      theme = "black_hole";
+    })
   ];
 
   programs.steam = {
@@ -74,6 +73,7 @@
     nvidia = {
       # Enable the Nvidia settings menu,
       # accessible via `nvidia-settings`.
+      open = true;
       nvidiaSettings = true;
       modesetting.enable = true;
 
