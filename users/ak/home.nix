@@ -59,7 +59,6 @@
     firefox
     brave
     discord
-    # teamspeak3
 
     vscode-fhs
   ];
