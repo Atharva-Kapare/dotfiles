@@ -10,8 +10,8 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    # ./hardware-configuration.nix
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
+    # /etc/nixos/hardware-configuration.nix
     ../common.nix
   ];
 
@@ -22,7 +22,40 @@
     (pkgs.callPackage ../../systemPackages/sddm-astronaut-theme {
       theme = "black_hole";
     })
+
+    pkgs.opencode
   ];
+
+  fileSystems = {
+    "/mnt/hdd" = {
+      device = "/dev/disk/by-uuid/3E480BA4480B59D3";
+      fsType = "ntfs3";
+      options = [
+        "nofail"
+        "x-systemd.automount"
+        "x-systemd.device-timeout=10"
+
+        # make it writable by your user (ak)
+        "uid=1000"
+        "gid=100"
+        "umask=022"
+      ];
+    };
+
+    "/mnt/speed" = {
+      device = "/dev/disk/by-uuid/2220182D20180A85";
+      fsType = "ntfs3";
+      options = [
+        "nofail"
+        "x-systemd.automount"
+        "x-systemd.device-timeout=10"
+
+        "uid=1000"
+        "gid=100"
+        "umask=022"
+      ];
+    };
+  };
 
   programs.steam = {
     enable = true;
@@ -33,7 +66,7 @@
 
   #  services.xserver.enable = true;
   #  services.xserver.displayManager.gdm.enable = true;
-  #  services.xserver.desktopManager.gnome.enable = true;
+  #  services.desktopManager.gnome.enable = true;
 
   services = {
     displayManager.sddm = {
@@ -53,6 +86,8 @@
       };
     };
 
+    desktopManager.gnome.enable = true;
+    
     xserver = {
       enable = true;
       # windowManager.gnome = {
@@ -61,7 +96,6 @@
       #     rofi
       #   ];
       # };
-      desktopManager.gnome.enable = true;
       videoDrivers = ["nvidia"];
     };
   };
