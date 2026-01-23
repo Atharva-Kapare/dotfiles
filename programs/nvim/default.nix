@@ -6,7 +6,7 @@
 }: {
   # Configuration stuff ...
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim # DO NOT REMOVE
+    inputs.nixvim.homeModules.nixvim # DO NOT REMOVE
 
     # ./plugins/hardtime.nix
     ./plugins/which-key.nix

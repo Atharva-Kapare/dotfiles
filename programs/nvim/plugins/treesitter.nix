@@ -11,9 +11,11 @@
   programs.nixvim.plugins = {
     treesitter = {
       enable = true;
-      nixGrammars = true;
-      indent = true;
-      incrementalSelection.enable = true;
+      settings = {
+        incrementalSelection.enable = true;
+        nixGrammars = true;
+        indent.enable = true;
+      };
     };
     treesitter-context = {
       enable = true;
@@ -22,7 +24,7 @@
     treesitter-refactor = {
       enable = true;
 
-      navigation = {
+      settings.navigation = {
         enable = true;
       };
     };

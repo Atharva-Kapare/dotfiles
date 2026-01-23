@@ -28,20 +28,19 @@
           black = {
             # Python formatter
             enable = true;
-            withArgs = ''
-              {
-                  extra_args = { "--fast" },
-              }
-            '';
+            #   {
+            #       extra_args = { "--fast" },
+            #   }
+            # '';
           };
           prettier = {
             enable = true;
             disableTsServerFormatter = true;
-            withArgs = ''
-              {
-                  extra_args = { "--no-semi", "--single-quote" },
-              }
-            '';
+            # withArgs = ''
+            #   {
+            #       extra_args = { "--no-semi", "--single-quote" },
+            #   }
+            # '';
           };
           stylua.enable = true;
           yamlfmt.enable = true;
@@ -51,24 +50,26 @@
 
     conform-nvim = {
       enable = true;
-      formatOnSave = {
-        lspFallback = true;
-        timeoutMs = 500;
-      };
-      notifyOnError = true;
-      formattersByFt = {
-        liquidsoap = ["liquidsoap-prettier"];
-        html = [["prettierd" "prettier"]];
-        css = [["prettierd" "prettier"]];
-        javascript = [["prettierd" "prettier"]];
-        javascriptreact = [["prettierd" "prettier"]];
-        typescript = [["prettierd" "prettier"]];
-        typescriptreact = [["prettierd" "prettier"]];
-        python = ["black"];
-        lua = ["stylua"];
-        nix = ["alejandra"];
-        markdown = [["prettierd" "prettier"]];
-        yaml = ["yamllint" "yamlfmt"];
+      settings = {
+        formatOnSave = {
+          lspFallback = true;
+          timeoutMs = 500;
+        };
+        notifyOnError = true;
+        formattersByFt = {
+          liquidsoap = ["liquidsoap-prettier"];
+          html = [["prettierd" "prettier"]];
+          css = [["prettierd" "prettier"]];
+          javascript = [["prettierd" "prettier"]];
+          javascriptreact = [["prettierd" "prettier"]];
+          typescript = [["prettierd" "prettier"]];
+          typescriptreact = [["prettierd" "prettier"]];
+          python = ["black"];
+          lua = ["stylua"];
+          nix = ["alejandra"];
+          markdown = [["prettierd" "prettier"]];
+          yaml = ["yamllint" "yamlfmt"];
+        };
       };
     };
 
@@ -85,7 +86,7 @@
         # tsserver.enable = true;
         eslint.enable = true;
         jsonls.enable = true;
-        lua-ls.enable = true;
+        lua_ls.enable = true;
       };
       keymaps.lspBuf = {
         "gd" = "definition";
@@ -97,17 +98,17 @@
     };
     lsp-lines = {
       enable = true;
-      currentLine = true;
     };
 
     trouble.enable = true;
+    web-devicons.enable = true;
 
     fidget = {
       enable = true;
-      progress = {
-        suppressOnInsert = true;
-        ignoreDoneAlready = true;
-        pollRate = 0.5;
+      settings.progress = {
+        suppress_on_insert = true;
+        ignore_done_already = true;
+        poll_rate = 1;
       };
     };
   };

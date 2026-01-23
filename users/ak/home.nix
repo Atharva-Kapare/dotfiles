@@ -24,6 +24,9 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
+      # permittedInsecurePackages = [
+      #   "qtwebengine-5.15.19"
+      # ];
     };
   };
 
@@ -37,14 +40,14 @@
     bottom
     git
     # neovim
-    thefuck
+    pay-respects
     starship
     lazygit
 
-    (nerdfonts.override {fonts = ["Hack"];})
+    hack-font
 
     alacritty
-    cinnamon.nemo-with-extensions
+    nemo
 
     docker
 
@@ -56,6 +59,7 @@
     firefox
     brave
     discord
+    # teamspeak3
 
     vscode-fhs
   ];
@@ -75,14 +79,19 @@
   # Git config
   programs.git = {
     enable = true;
-    userName = "Atharva-Kapare";
-    userEmail = userSettings.email;
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Atharva-Kapare";
+        email = userSettings.email;
+      };
       init.defaultBranch = "main";
     };
   };
 
-  programs.ssh.enable = true;
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -92,7 +101,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.11";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
