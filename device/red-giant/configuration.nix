@@ -23,38 +23,22 @@
       theme = "black_hole";
     })
 
+    # For my llm fix:
     pkgs.opencode
+    pkgs.hello
   ];
 
-  fileSystems = {
-    "/mnt/hdd" = {
-      device = "/dev/disk/by-uuid/3E480BA4480B59D3";
-      fsType = "ntfs3";
-      options = [
-        "nofail"
-        "x-systemd.automount"
-        "x-systemd.device-timeout=10"
+  # Simple NTFS mount configuration
+  # fileSystems."/mnt/hdd" = {
+  #   device = "/dev/disk/by-uuid/3E480BA4480B59D3";
+  #   fsType = "ntfs-3g";
+  #   options = [ "nofail" "rw" ];
+  # };
 
-        # make it writable by your user (ak)
-        "uid=1000"
-        "gid=100"
-        "umask=022"
-      ];
-    };
-
-    "/mnt/speed" = {
-      device = "/dev/disk/by-uuid/2220182D20180A85";
-      fsType = "ntfs3";
-      options = [
-        "nofail"
-        "x-systemd.automount"
-        "x-systemd.device-timeout=10"
-
-        "uid=1000"
-        "gid=100"
-        "umask=022"
-      ];
-    };
+  fileSystems."/mnt/speed" = {
+    device = "/dev/disk/by-uuid/6000c312-979a-4de8-ac73-7843205fd0f2";
+    fsType = "ext4";
+    options = ["defaults" "noatime"];
   };
 
   programs.steam = {
@@ -87,7 +71,7 @@
     };
 
     desktopManager.gnome.enable = true;
-    
+
     xserver = {
       enable = true;
       # windowManager.gnome = {
