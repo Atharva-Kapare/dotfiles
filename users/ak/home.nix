@@ -18,6 +18,7 @@
     ../../programs/terminal
     ../../programs/devbox
     ../../programs/zoxide
+    # ../../programs/steam
   ];
 
   nixpkgs = {
@@ -59,6 +60,13 @@
     firefox
     brave
     discord
+
+    # Distrobox
+    distrobox
+    distrobox-tui
+    distroshelf
+
+    wineWowPackages.full
 
     vscode-fhs
   ];
