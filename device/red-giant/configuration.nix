@@ -41,11 +41,19 @@
     options = ["defaults" "noatime"];
   };
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  programs = {
+    xwayland = {
+      enable = true;
+    };
+    hyprland = {
+      enable = true;
+    };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    };
   };
 
   #  services.xserver.enable = true;
@@ -53,24 +61,27 @@
   #  services.desktopManager.gnome.enable = true;
 
   services = {
-    displayManager.sddm = {
-      enable = true; # Enable SDDM.
-      package = pkgs.kdePackages.sddm;
-      extraPackages = with pkgs; [
-        kdePackages.qtsvg
-        kdePackages.qtmultimedia
-        kdePackages.qtvirtualkeyboard
-      ];
-      wayland.enable = true;
-      theme = "sddm-astronaut-theme";
-      settings = {
-        Theme = {
-          CursorTheme = "Bibata-Modern-Ice";
+    displayManager = {
+      defaultSession = "hyprland";
+
+      sddm = {
+        enable = true; # Enable SDDM.
+        package = pkgs.kdePackages.sddm;
+        extraPackages = with pkgs; [
+          kdePackages.qtsvg
+          kdePackages.qtmultimedia
+          kdePackages.qtvirtualkeyboard
+        ];
+        wayland.enable = true;
+        theme = "sddm-astronaut-theme";
+        settings = {
+          Theme = {
+            CursorTheme = "Bibata-Modern-Ice";
+          };
         };
       };
     };
-
-    desktopManager.gnome.enable = true;
+    # desktopManager.gnome.enable = true;
 
     xserver = {
       enable = true;

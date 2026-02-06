@@ -19,6 +19,7 @@
     ../../programs/devbox
     ../../programs/zoxide
     # ../../programs/steam
+    ../../programs/hyprland
   ];
 
   nixpkgs = {
@@ -31,6 +32,7 @@
     };
   };
 
+  xdg.configFile."mimeapps.list".force = true;
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = userSettings.username;
